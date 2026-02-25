@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scam Prevention for Seniors in Missoula — Good Neighbor Tech</title>
+<meta name="description" content="A plain-English guide to staying safe from phone scams, tech support fraud, and online threats targeting Missoula seniors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C8973E;
+  --gold-light: #E8C774;
+  --gold-glow: #F5E6C8;
+  --cream: #FDFAF5;
+  --warm-white: #FEFCF9;
+  --text-primary: #2C2418;
+  --text-secondary: #6B5D4F;
+  --text-light: #9A8E80;
+  --border: #E8E0D4;
+  --bg-section-alt: #F8F4ED;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-white);
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #B5872F; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(253, 250, 245, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.nav-mobile-toggle span {
+  width: 24px; height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Article Header ===== */
+.article-header {
+  padding: 8rem 2rem 3.5rem;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200, 151, 62, 0.04) 0%, rgba(245, 230, 200, 0.08) 100%);
+}
+
+.article-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  transition: gap 0.3s ease;
+}
+
+.article-back:hover { gap: 0.7rem; }
+
+.article-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--gold-glow);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.88rem;
+}
+
+.article-meta-divider {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+/* ===== Article Body ===== */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+.article-body p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem 0;
+}
+
+.article-body ul, .article-body ol {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.6rem;
+}
+
+.article-body ol li {
+  padding-left: 0.25rem;
+}
+
+/* ===== Callout Boxes ===== */
+.callout {
+  background: var(--bg-section-alt);
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+.callout-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Comparison Table ===== */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  background: var(--text-primary);
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.comparison-table th:first-child {
+  border-radius: 4px 0 0 0;
+}
+
+.comparison-table th:last-child {
+  border-radius: 0 4px 0 0;
+}
+
+.comparison-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background: var(--bg-section-alt);
+}
+
+.comparison-table .icon-good { color: #6B8F5E; }
+.comparison-table .icon-bad { color: #C25D4E; }
+
+/* ===== Steps Block ===== */
+.steps-block {
+  margin: 2.5rem 0;
+}
+
+.step {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-top: 0.15rem;
+}
+
+.step-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.step-content p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* ===== Seasonal Grid ===== */
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.seasonal-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.seasonal-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.seasonal-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.seasonal-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* ===== Checklist ===== */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+/* ===== CTA Box ===== */
+.article-cta {
+  background: var(--text-primary);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 4px;
+  margin: 3rem 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -15%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(200, 151, 62, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.article-cta .btn {
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #B5872F;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(200, 151, 62, 0.3);
+}
+
+/* ===== Sources ===== */
+.article-sources {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-sources h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+}
+
+.source-list li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.source-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.source-list a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.source-list a:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--text-primary);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo span { color: var(--gold); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(253, 250, 245, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .nav-mobile-toggle { display: flex; }
+  .seasonal-grid { grid-template-columns: 1fr; }
+  .article-body { padding: 2.5rem 1.5rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Good Neighbor<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#testimonials">Kind Words</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Article Header ===== -->
+<header class="article-header">
+  <div class="article-header-content">
+    <a href="blog.html" class="article-back"><span>←</span> Back to Blog</a>
+    <div class="article-category">Security</div>
+    <h1 class="article-title">Scam Prevention for Seniors in Missoula: A Plain-English Guide to Staying Safe</h1>
+    <div class="article-meta">
+      <span>Good Neighbor Tech</span>
+      <div class="article-meta-divider"></div>
+      <span>February 5, 2026</span>
+      <div class="article-meta-divider"></div>
+      <span>8 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Article Body ===== -->
+<article class="article-body">
+
+  <p>If you're a senior in Missoula or have aging parents here, scam prevention has become essential. Across Montana, phone fraud and online scams targeting older adults have increased dramatically, with scammers pretending to be Medicare, your bank, or even a grandchild in trouble. Local agencies like Missoula Aging Services have issued warnings because these attempts are getting more frequent and more convincing.</p>
+
+  <p>The good news? With a few simple habits, you can make yourself a tough target. This guide is written for Missoula seniors and their families who want straightforward answers without the tech jargon.</p>
+
+  <hr>
+
+  <h2>Why Missoula Seniors Get Targeted</h2>
+
+  <p>Scammers look for communities where people are polite, answer the phone, and have built up some savings over the years. Missoula checks those boxes. We have a close-knit community, a good number of retirees, and a culture where folks still help neighbors and give people the benefit of the doubt.</p>
+
+  <p>Those are wonderful qualities — but unfortunately, dishonest people try to take advantage of them. Montana's Attorney General has noted that bad actors specifically look for older adults they believe will be less likely to hang up or question something that sounds official.</p>
+
+  <div class="callout">
+    <p><strong>This isn't about being "behind on technology."</strong> It's about being deliberately targeted by people who study how small Montana towns actually work.</p>
+  </div>
+
+  <hr>
+
+  <h2>The Most Common Scams Hitting Missoula</h2>
+
+  <p>Here are the main types causing problems for our neighbors right now.</p>
+
+  <h3>Government or Medicare Calls</h3>
+  <p>Someone claims to be from Medicare, Social Security, or another agency and says they need to "verify" your information or your benefits will be interrupted. They may ask for your Medicare number, Social Security number, or bank details, and they make it sound urgent.</p>
+
+  <h3>Bank and Credit Card Alerts</h3>
+  <p>A caller says they're from your bank and there's a problem with your account or a suspicious purchase. They pressure you to "confirm" your information or read them a security code to "fix" the issue.</p>
+
+  <h3>Tech Support Pop-Ups</h3>
+  <p>A loud warning appears on your computer screen saying your device is infected and you need to call a number for Microsoft, Apple, or "security support." On the phone, they ask to control your computer remotely or want payment in gift cards.</p>
+
+  <h3>Prize and Sweepstakes Notifications</h3>
+  <p>You're told you've won money or a prize, but first you need to pay "taxes" or "processing fees." Real prizes never ask you to pay up front.</p>
+
+  <h3>Family Emergency Calls</h3>
+  <p>Someone pretends to be a grandchild or relative in trouble and asks for money quickly, often saying "don't tell anyone else." Sometimes they know personal details from social media, which makes it feel real.</p>
+
+  <div class="callout">
+    <p><strong>The common thread:</strong> If any message asks for personal information, money, or remote access to your devices and feels rushed or scary, that's your signal to pause.</p>
+  </div>
+
+  <hr>
+
+  <h2>Phone Scam Help for Missoula Seniors</h2>
+
+  <p>Phone scams remain the most common threat to older adults in Montana. Understanding how to handle suspicious calls can protect you from the majority of fraud attempts targeting seniors in Missoula.</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th><span class="icon-good">✓</span>&ensp;Real Call</th>
+        <th><span class="icon-bad">✗</span>&ensp;Scam Call</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Offers to send information by mail</td>
+        <td>Demands immediate action or benefits will stop</td>
+      </tr>
+      <tr>
+        <td>Never asks for full account numbers</td>
+        <td>Asks for Medicare number, SSN, or passwords</td>
+      </tr>
+      <tr>
+        <td>Allows you to call back at published numbers</td>
+        <td>Insists you must stay on the line right now</td>
+      </tr>
+      <tr>
+        <td>Accepts questions and doesn't rush you</td>
+        <td>Uses fear, urgency, or threats to pressure you</td>
+      </tr>
+      <tr>
+        <td>Comes from numbers you can verify</td>
+        <td>Uses spoofed numbers that look local or official</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>When you receive a suspicious phone call in Missoula, remember that you always have the right to hang up and verify the caller's identity by reaching out through official channels.</p>
+
+  <hr>
+
+  <h2>Tech Support Scams: What Missoula Residents Need to Know</h2>
+
+  <p>Tech support scams have become particularly sophisticated, with pop-ups designed to look like legitimate security warnings from Microsoft, Apple, or antivirus companies. Here's how these scams typically work in Missoula homes:</p>
+
+  <ol>
+    <li>You're browsing online when suddenly a loud pop-up appears claiming your computer is infected</li>
+    <li>The pop-up displays a phone number to call for "immediate support"</li>
+    <li>If you call, someone claims to be from a major tech company</li>
+    <li>They ask for remote access to your computer "to fix the problem"</li>
+    <li>Once inside, they either install actual malware, steal information, or demand payment for unnecessary "repairs"</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">The reality</div>
+    <p>Microsoft, Apple, and legitimate security companies <strong>never</strong> display pop-ups with phone numbers asking you to call them. If you see this, close your browser immediately or shut down your computer. Then, if you need help, reach out to a trusted local provider for in-home computer help.</p>
+  </div>
+
+  <hr>
+
+  <h2>Protect Older Adults from Fraud: Three Simple Rules</h2>
+
+  <p>You don't need to memorize every type of scam. Just remember three steps whenever something feels off.</p>
+
+  <div class="steps-block">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>Stop</h4>
+        <p>If you feel rushed, pressured, or scared, it's okay to pause. You can hang up, close the laptop, or delete the email. Real organizations won't punish you for taking time to think things through.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Check</h4>
+        <p>Use a phone number you already trust — like the one on the back of your card, on your latest statement, or from an official website — and call the organization directly. In Missoula, you can also contact Missoula Aging Services or the Montana Senior Medicare Patrol if you're unsure about a Medicare or benefits-related call.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Protect</h4>
+        <p>Never share your Social Security number, Medicare number, bank or card information, security codes, or passwords with someone who contacted you unexpectedly. If you think you may have shared something by mistake, call your bank or Medicare right away.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>These three steps — <strong>Stop, Check, Protect</strong> — make it much harder for scammers to succeed, even when their stories sound convincing.</p>
+
+  <hr>
+
+  <h2>Seasonal Warning Signs</h2>
+
+  <p>Scammers adjust their tactics throughout the year. Here are patterns Missoula seniors should watch for:</p>
+
+  <div class="seasonal-grid">
+    <div class="seasonal-card">
+      <div class="seasonal-card-label">January – April</div>
+      <h4>Tax Season</h4>
+      <p>Fake IRS calls claiming you owe back taxes or threatening arrest. The real IRS never calls first — they mail letters.</p>
+    </div>
+    <div class="seasonal-card">
+      <div class="seasonal-card-label">October – December</div>
+      <h4>Medicare Open Enrollment</h4>
+      <p>Calls offering "free" benefits reviews or new Medicare cards, asking for your number to "update the system." Medicare will never call asking for your number.</p>
+    </div>
+    <div class="seasonal-card">
+      <div class="seasonal-card-label">November – December</div>
+      <h4>Holiday Season</h4>
+      <p>Package delivery scams via text or email with fake tracking links, and charity scams exploiting holiday generosity.</p>
+    </div>
+    <div class="seasonal-card">
+      <div class="seasonal-card-label">Year-Round</div>
+      <h4>Utility Imposters</h4>
+      <p>Utility company imposters threatening to shut off power unless you pay immediately via gift cards or wire transfer.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>How Families Can Help Each Other</h2>
+
+  <p>If you have parents or grandparents in Missoula, you can help keep them safe without taking over their lives.</p>
+
+  <h3>Have a Calm Conversation</h3>
+  <p>Explain that Montana authorities are seeing more scams targeting seniors, and you'd like to create a simple plan together. Frame it as teamwork — "let's agree you never have to handle something scary alone" — rather than telling them what they did wrong.</p>
+
+  <h3>Make a "Call Me First" Agreement</h3>
+  <p>Ask them to call or text you (or another trusted person) before sending money, sharing personal information, or letting anyone access their computer remotely. You can write this down and tape it near the phone as a friendly reminder.</p>
+
+  <h3>Program Safe Contact Numbers</h3>
+  <p>Help them save trusted numbers in their phone: bank, credit card, doctor, Medicare, Missoula Aging Services, and yours. That way, if something strange happens, they can quickly find the right number instead of calling back a scammer's voicemail.</p>
+
+  <h3>Consider Bringing in a Local Helper</h3>
+  <p>Sometimes families find it easier when a patient, third-party tech person walks through these topics at home, checks devices, and answers questions without any judgment. This takes pressure off everyone and gives seniors someone local they can call with follow-up questions.</p>
+
+  <hr>
+
+  <h2>When to Call a Local Tech Neighbor</h2>
+
+  <p>Sometimes a quick call to your bank is all you need. Other times, you might want a more complete safety check of your devices and accounts.</p>
+
+  <p>During an in-home scam-prevention visit, you can expect:</p>
+
+  <ul>
+    <li>A review of recent suspicious calls, texts, and emails, with clear explanations of what was real and what wasn't</li>
+    <li>A check of your phone, tablet, and computer for risky pop-ups, fake "security" programs, or settings that make scams more likely to appear</li>
+    <li>Simple adjustments — like blocking common scam numbers, updating privacy settings, and creating easy rules for what to do when something looks odd</li>
+    <li>If you're interested, an introduction to safe AI tools that can help you evaluate suspicious messages in plain English</li>
+  </ul>
+
+  <p>Having that relationship before a crisis means you've got someone you trust to call the next time something confusing pops up.</p>
+
+  <hr>
+
+  <h2>A Quick Checklist for Everyday Safety</h2>
+
+  <p>Keep this by your phone or computer:</p>
+
+  <ul class="checklist">
+    <li>
+      <span class="checklist-icon">✓</span>
+      If it's urgent and about money or benefits, hang up and call back using a number you already trust.
+    </li>
+    <li>
+      <span class="checklist-icon">✓</span>
+      If your screen is yelling at you, close the browser or turn off the device — don't call the number on the pop-up.
+    </li>
+    <li>
+      <span class="checklist-icon">✓</span>
+      If you "won" something but have to pay first, it's not real.
+    </li>
+    <li>
+      <span class="checklist-icon">✓</span>
+      If someone says "don't tell anyone," tell someone right away.
+    </li>
+  </ul>
+
+  <p>You're not trying to be perfect. You're just making yourself enough of a hassle that scammers move on to easier targets.</p>
+
+  <!-- ===== CTA ===== -->
+  <div class="article-cta">
+    <h3>Ready to Protect Yourself or a Loved One?</h3>
+    <p>Schedule an in-home scam prevention and tech safety visit. We'll review your devices, block common scam numbers, and create a simple plan you can follow.</p>
+    <a href="index.html#contact" class="btn btn-primary">Schedule a Visit</a>
+  </div>
+
+  <!-- ===== Sources ===== -->
+  <div class="article-sources">
+    <h3>References</h3>
+    <ul class="source-list">
+      <li><a href="https://missoulaagingservices.org/get-help/daily-living/help-with-daily-tasks.html" target="_blank" rel="noopener">Missoula Aging Services</a> — Help with daily tasks and senior support programs</li>
+      <li><a href="https://www.kpax.com/news/missoula-county/missoula-aging-services-issues-warning-about-rise-in-scam-calls" target="_blank" rel="noopener">KPAX News</a> — Rising scam calls targeting older adults in Missoula</li>
+      <li><a href="https://newstalkkgvo.com/scams-protect-montana-seniors/" target="_blank" rel="noopener">NewsTalk KGVO</a> — How Montana seniors can protect themselves against scams</li>
+      <li><a href="https://missoulaagingservices.org/get-help/medicare-finances/senior-medicare-patrol.html" target="_blank" rel="noopener">Senior Medicare Patrol</a> — Medicare fraud prevention for Montana</li>
+      <li><a href="https://www.elderloveusa.org/post/list-of-artificial-intelligence-classes-and-resources-for-older-adults" target="_blank" rel="noopener">Elder Love USA</a> — AI tools and classes for older adults</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-logo">Good Neighbor<span>.</span></div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+</script>
+
+</body>
+</html>

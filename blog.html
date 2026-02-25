@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Good Neighbor Tech</title>
+<meta name="description" content="Simple tech tips and guides written in plain language. No jargon, no judgment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --gold: #C8973E;
+  --gold-light: #E8C774;
+  --gold-glow: #F5E6C8;
+  --cream: #FDFAF5;
+  --warm-white: #FEFCF9;
+  --text-primary: #2C2418;
+  --text-secondary: #6B5D4F;
+  --text-light: #9A8E80;
+  --border: #E8E0D4;
+  --bg-section-alt: #F8F4ED;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-white);
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(253, 250, 245, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200, 151, 62, 0.04) 0%, rgba(245, 230, 200, 0.08) 100%);
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.page-desc {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Blog Grid ===== */
+.blog-section {
+  padding: 4rem 2rem 7rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  border: 1.5px solid var(--border);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(44, 36, 24, 0.06);
+}
+
+.blog-card-image {
+  height: 200px;
+  background: var(--bg-section-alt);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card-image .placeholder-icon {
+  font-size: 2.5rem;
+  opacity: 0.3;
+}
+
+.blog-card-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(253, 250, 245, 0.92);
+  backdrop-filter: blur(8px);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-radius: 2px;
+}
+
+.blog-card-body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.blog-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-excerpt {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  transition: gap 0.3s ease;
+}
+
+.blog-card-link:hover {
+  gap: 0.7rem;
+}
+
+.blog-card-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+/* ===== Featured Post ===== */
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  transition: all 0.35s ease;
+}
+
+.featured-post:hover {
+  box-shadow: 0 12px 40px rgba(44, 36, 24, 0.06);
+}
+
+.featured-post .blog-card-image {
+  height: 100%;
+  min-height: 320px;
+}
+
+.featured-post .blog-card-body {
+  padding: 2.5rem;
+  justify-content: center;
+}
+
+.featured-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.featured-post .blog-card-title {
+  font-size: 1.6rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--text-primary);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo span { color: var(--gold); }
+
+/* ===== Fade animation ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .featured-post {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-post .blog-card-image {
+    min-height: 220px;
+  }
+
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(253, 250, 245, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .nav-mobile-toggle { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Good Neighbor<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#testimonials">Kind Words</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Page Header ===== -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="page-label">Blog</div>
+    <h1 class="page-title">Tech tips in plain English</h1>
+    <p class="page-desc">Simple guides, honest advice, and the occasional rant about why things don't need to be this complicated.</p>
+  </div>
+</header>
+
+<!-- ===== Blog Content ===== -->
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Featured Post -->
+    <article class="featured-post fade-up">
+      <div class="blog-card-image">
+        <div class="placeholder-icon">📱</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="featured-label">Featured</div>
+        <div class="blog-card-date">February 5, 2026</div>
+        <h2 class="blog-card-title">The 5 Scam Calls Every Montanan Should Know How to Spot</h2>
+        <p class="blog-card-excerpt">They sound official. They feel urgent. And they're getting smarter. Here's how to recognize the most common scams hitting Montana right now — and what to do when you get one.</p>
+        <a href="scam-prevention-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- Filter Buttons -->
+    <div class="blog-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Getting Started</button>
+      <button class="filter-btn">Security</button>
+      <button class="filter-btn">Staying Connected</button>
+      <button class="filter-btn">Tips & Tricks</button>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">💻</div>
+          <div class="blog-card-category">Getting Started</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">January 28, 2026</div>
+          <h3 class="blog-card-title">Your New Laptop: A No-Nonsense Setup Guide</h3>
+          <p class="blog-card-excerpt">Just got a new computer? Here's exactly what to do first — in the right order — so it works the way you want it to.</p>
+          <a href="#" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">🔑</div>
+          <div class="blog-card-category">Security</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">January 21, 2026</div>
+          <h3 class="blog-card-title">Passwords Don't Have to Be a Nightmare</h3>
+          <p class="blog-card-excerpt">One simple system to manage all your passwords without sticky notes, spreadsheets, or memorizing 47 different things.</p>
+          <a href="password-management-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">📹</div>
+          <div class="blog-card-category">Staying Connected</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">January 14, 2026</div>
+          <h3 class="blog-card-title">How to Video Call Your Grandkids (Without the Frustration)</h3>
+          <p class="blog-card-excerpt">FaceTime, Zoom, Google Meet — we break down which one to use and walk you through it step by step.</p>
+          <a href="#" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">📧</div>
+          <div class="blog-card-category">Tips & Tricks</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">January 7, 2026</div>
+          <h3 class="blog-card-title">Is This Email Real? A Quick Way to Tell</h3>
+          <p class="blog-card-excerpt">Phishing emails look more convincing than ever. Here are three things to check before you click anything.</p>
+          <a href="#" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">📶</div>
+          <div class="blog-card-category">Tips & Tricks</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">December 30, 2025</div>
+          <h3 class="blog-card-title">Why Your Wi-Fi Is Slow (And What Actually Fixes It)</h3>
+          <p class="blog-card-excerpt">Before you call your internet provider and sit on hold for an hour, try these three things first.</p>
+          <a href="#" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <div class="placeholder-icon">📸</div>
+          <div class="blog-card-category">Staying Connected</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">December 22, 2025</div>
+          <h3 class="blog-card-title">Sharing Photos Without Losing Your Mind</h3>
+          <p class="blog-card-excerpt">The easiest ways to send photos to family — no cloud accounts, no confusing apps, no compressed blurry messes.</p>
+          <a href="#" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-logo">Good Neighbor<span>.</span></div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Fade-in observer
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const siblings = entry.target.parentElement.querySelectorAll('.fade-up');
+      const idx = Array.from(siblings).indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('in-view'), idx * 100);
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+// Filter buttons (visual toggle only for now)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
