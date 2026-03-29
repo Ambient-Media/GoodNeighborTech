@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B87GG61EHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B87GG61EHW');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Good Neighbor Tech — Friendly Tech Help in Missoula</title>
@@ -1317,14 +1325,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </li>
-      <li class="has-dropdown">
-        <a href="blog.html">Blog <span class="dd-arrow">&#9662;</span></a>
-        <ul class="dropdown">
-          <li><a href="scam-prevention-missoula-seniors.html">Scam Prevention</a></li>
-          <li><a href="password-management-missoula-seniors.html">Password Management</a></li>
-          <li><a href="blog.html">All Posts</a></li>
-        </ul>
-      </li>
+      <li><a href="blog.html">Blog</a></li>
       <li class="has-dropdown">
         <a href="resources.html">Resources <span class="dd-arrow">&#9662;</span></a>
         <ul class="dropdown">
@@ -1364,9 +1365,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
       </div>
       <div class="hero-form-body">
         <form onsubmit="handleConsultationSubmit(event)">
+          <input type="hidden" name="_subject" value="New Callback Request — Good Neighbor Tech">
           <div class="form-group">
             <label for="consult-issue">My issue is</label>
-            <select id="consult-issue" required>
+            <select id="consult-issue" name="issue" required>
               <option value="" disabled selected>Select your issue...</option>
               <option value="device-setup">Device setup &amp; help</option>
               <option value="security">Security &amp; scam protection</option>
@@ -1377,11 +1379,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
           </div>
           <div class="form-group">
             <label for="consult-name">My name is</label>
-            <input type="text" id="consult-name" placeholder="Your name" required>
+            <input type="text" id="consult-name" name="name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label for="consult-contact">My contact info</label>
-            <input type="text" id="consult-contact" placeholder="Email or phone number" required>
+            <input type="text" id="consult-contact" name="contact" placeholder="Email or phone number" required>
             <div class="contact-pref">
               <label class="pref-option">
                 <input type="radio" name="contactPref" value="email" checked> Email
@@ -1606,15 +1608,42 @@ document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 // ===== Form handlers =====
 function handleConsultationSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button');
+  const form = e.target;
+  const btn = form.querySelector('button');
   const originalText = btn.textContent;
-  btn.textContent = 'Thank you!';
-  btn.style.background = '#348542';
-  e.target.querySelectorAll('input').forEach(el => el.value = '');
-  setTimeout(() => {
-    btn.textContent = originalText;
-    btn.style.background = '';
-  }, 3000);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const data = new FormData(form);
+
+  fetch('https://formspree.io/f/mpqyeokn', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      btn.textContent = 'Thank you! We\'ll be in touch.';
+      btn.style.background = '#348542';
+      form.querySelectorAll('input:not([type=hidden]):not([type=radio]), select, textarea').forEach(el => el.value = '');
+      form.querySelector('select').selectedIndex = 0;
+    } else {
+      btn.textContent = 'Something went wrong — try calling us!';
+      btn.style.background = '#E85D3A';
+    }
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+    }, 4000);
+  }).catch(() => {
+    btn.textContent = 'Something went wrong — try calling us!';
+    btn.style.background = '#E85D3A';
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+    }, 4000);
+  });
 }
 
 function handleEmailSubmit(e) {
