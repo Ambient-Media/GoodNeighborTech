@@ -550,31 +550,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-links.open a::after { background: var(--primary); }
   .nav-links.open a:hover { color: var(--text-primary); }
 
-  .nav-links.open .dropdown {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    box-shadow: none;
-    background: transparent;
-    padding: 0.25rem 0 0 1rem;
-    min-width: auto;
-  }
-
-  .nav-links.open .dropdown li a {
-    padding: 0.35rem 0;
-    font-size: 0.78rem;
-    color: var(--text-light) !important;
-  }
-
+  .nav-links.open .dropdown { display: none; }
   .nav-links.open .dd-arrow { display: none; }
+
+
   .nav-mobile-toggle { display: flex; }
 }
 
 @media (max-width: 600px) {
   .page-header { padding: 6rem 1.25rem 2.5rem; }
-  .nav-brand-logo { height: 32px; }
-  .nav-brand-text { font-size: 0.9rem; }
+  .nav-brand-logo { height: 36px; }
+  .nav-brand-text { font-size: 1rem; }
 }
 </style>
 </head>
@@ -638,7 +624,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     <!-- Featured Post (newest) -->
     <article class="featured-post fade-up">
       <div class="blog-card-image">
-        <div class="placeholder-icon">🤖</div>
+        <img src="images/an-elderly-man-in-his-80s-sits-at-a-wood_mJtMUFWGQ2ypdmwu6W-HWA_q4aNmnJ-RC60Zu1v59F0uA_cover_hd.png" alt="Elderly man smiling at laptop" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="blog-card-body">
         <div class="featured-label">Featured</div>
@@ -663,7 +649,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
       <article class="blog-card fade-up">
         <div class="blog-card-image">
-          <div class="placeholder-icon">📸</div>
+          <img src="images/a-silver-haired-woman-in-a-cream-cardiga_M--bRsajQTmqBNv20bbHWA_Gwer5XqsTOy6B9BPG0DGjw_cover_hd.png" alt="Silver-haired woman sharing tablet with family member" style="width:100%;height:100%;object-fit:cover;">
           <div class="blog-card-category">Staying Connected</div>
         </div>
         <div class="blog-card-body">
@@ -676,7 +662,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
       <article class="blog-card fade-up">
         <div class="blog-card-image">
-          <div class="placeholder-icon">📹</div>
+          <img src="images/warm-candid-photograph-of-a-happy-senior_-K2rCdDLS9eY6PnLyh2RNg_jlBRflNwQEarOyRjJjjSHQ_cover_hd.png" alt="Happy senior waving at tablet during video call" style="width:100%;height:100%;object-fit:cover;">
           <div class="blog-card-category">Staying Connected</div>
         </div>
         <div class="blog-card-body">
@@ -689,7 +675,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
       <article class="blog-card fade-up">
         <div class="blog-card-image">
-          <div class="placeholder-icon">🛡️</div>
+          <img src="images/photograph-of-a-concerned-senior-woman-l_5ZRkmH1nT1Ol5B4BF2wBBw_BsrtfW2HTquaVtYad6eOCA_cover_hd.png" alt="Concerned senior woman looking at smartphone" style="width:100%;height:100%;object-fit:cover;">
           <div class="blog-card-category">Security</div>
         </div>
         <div class="blog-card-body">
@@ -702,7 +688,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
       <article class="blog-card fade-up">
         <div class="blog-card-image">
-          <div class="placeholder-icon">🔑</div>
+          <img src="images/warm-photograph-of-a-senior-man-s-hands-_sGj7TBEURzmO1CL2YwTIBQ_rVLue9qORn63rSXn1CUOpQ_cover_hd.png" alt="Senior man's hands writing notes beside a laptop" style="width:100%;height:100%;object-fit:cover;">
           <div class="blog-card-category">Security</div>
         </div>
         <div class="blog-card-body">

@@ -324,7 +324,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('missoula-hero1.png') center/cover no-repeat,
+  background: url('missoula-hero1.jpg') center/cover no-repeat,
               linear-gradient(180deg, #87CEEB 0%, #B0D4E8 40%, #8B9E7C 70%, #6B7B5E 100%);
   z-index: 0;
 }
@@ -1145,20 +1145,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .nav-links.open .dropdown {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    box-shadow: none;
-    background: transparent;
-    padding: 0.25rem 0 0 1rem;
-    min-width: auto;
-  }
-
-  .nav-links.open .dropdown li a {
-    padding: 0.35rem 0;
-    font-size: 0.78rem;
-    color: var(--text-light) !important;
+    display: none;
   }
 
   .nav-links.open .dd-arrow { display: none; }
@@ -1185,109 +1172,148 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 @media (max-width: 600px) {
   .hero {
-    padding: 4.5rem 0 1.5rem;
+    min-height: auto;
+    padding: 5rem 0 2.5rem;
   }
 
   .hero-inner {
-    padding: 0 0.75rem;
-    gap: 1rem;
+    padding: 0 1rem;
+    gap: 1.5rem;
   }
 
   .hero-headline {
-    font-size: 1.7rem;
-    line-height: 1.1;
+    font-size: 2rem;
+    line-height: 1.08;
   }
 
   .hero-subheadline {
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
+    font-size: 1rem;
+    margin-top: 0.4rem;
   }
 
   .hero-subtitle {
-    font-size: 0.78rem;
-    margin-top: 0.35rem;
-    line-height: 1.4;
+    font-size: 0.88rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
   }
 
   .hero-checks {
-    margin-top: 0.5rem;
-    gap: 0.1rem;
+    margin-top: 0.75rem;
+    gap: 0.35rem;
   }
 
   .hero-checks li {
-    font-size: 0.75rem;
+    font-size: 0.88rem;
   }
 
   .hero-form-card {
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
   }
 
   .hero-form-header {
-    padding: 0.6rem 0.75rem;
+    padding: 1rem 1.25rem;
   }
 
   .hero-form-header h2 {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
   }
 
   .hero-form-header .form-subtitle {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
   }
 
   .hero-form-body {
-    padding: 0.75rem 0.75rem 1rem;
+    padding: 1.25rem 1.25rem 1.5rem;
   }
 
   .hero-form-card .form-group {
-    margin-bottom: 0.4rem;
-    gap: 0.15rem;
+    margin-bottom: 0.75rem;
+    gap: 0.3rem;
   }
 
   .hero-form-card label {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 
   .hero-form-card input,
   .hero-form-card select {
-    padding: 0.5rem 0.7rem;
-    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    min-height: 48px;
   }
 
   .contact-pref {
-    gap: 0.75rem;
-    margin-top: 0.2rem;
+    gap: 1.25rem;
+    margin-top: 0.4rem;
   }
 
   .pref-option {
-    font-size: 0.7rem !important;
+    font-size: 0.88rem !important;
   }
 
   .hero-form-card .btn-primary {
-    padding: 0.6rem;
-    font-size: 0.75rem;
-    margin-top: 0.15rem;
+    padding: 1rem;
+    font-size: 0.92rem;
+    margin-top: 0.5rem;
+    min-height: 52px;
   }
 
   .hero-form-card .form-reassurance {
-    font-size: 0.7rem;
-    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    margin-top: 0.6rem;
   }
 
   .about-values {
     gap: 1.25rem;
   }
 
+  .section { padding: 4rem 1.25rem; }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
   .nav-brand-logo {
-    height: 32px;
+    height: 36px;
   }
 
   .nav-brand-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .trust-bar {
     font-size: 0.6rem;
     padding: 0.2rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 4.5rem 0 2rem;
+  }
+
+  .hero-inner {
+    padding: 0 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .hero-headline {
+    font-size: 1.7rem;
+  }
+
+  .hero-subheadline {
+    font-size: 0.9rem;
+  }
+
+  .section { padding: 3rem 1rem; }
+
+  .hero-form-body {
+    padding: 1rem 1rem 1.25rem;
   }
 }
 </style>
