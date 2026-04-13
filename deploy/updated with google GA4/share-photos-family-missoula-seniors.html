@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B87GG61EHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B87GG61EHW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Ways to Share Photos With Your Family Without Printing Them | Good Neighbor Tech Missoula</title>
+<meta name="description" content="5 simple ways for Missoula seniors to share photos with family without printing them. Google Photos, iCloud, digital frames, and more — in plain English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables (from homepage) ===== */
+:root {
+  --primary: #2B6CB0;
+  --primary-dark: #1E3A5F;
+  --primary-light: #EBF2FA;
+  --accent: #3E9B4F;
+  --accent-dark: #348542;
+  --cta: #E85D3A;
+  --cta-dark: #D04E2E;
+  --warm-bg: #F9F7F4;
+  --warm-bg-alt: #F1EDE6;
+  --white: #FFFFFF;
+  --text-primary: #2D3748;
+  --text-secondary: #5A6577;
+  --text-light: #8B95A5;
+  --border: #D8DDE5;
+  --shadow: rgba(45, 55, 72, 0.08);
+  --font-display: 'Nunito', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-bg);
+  line-height: 1.8;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--primary-dark); }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation (matches homepage) ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.nav-brand-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-nav-cta {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: var(--text-primary);
+  color: var(--white);
+  transition: all 0.35s ease;
+}
+
+.btn-nav-cta:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Nav Dropdowns */
+.has-dropdown { position: relative; }
+
+.dd-arrow {
+  font-size: 0.6em;
+  margin-left: 0.15rem;
+  opacity: 0.7;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+}
+
+.dropdown li a::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Article Header ===== */
+.article-header {
+  padding: 7rem 2rem 3rem;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  transition: gap 0.3s ease, color 0.2s;
+}
+
+.article-back:hover { gap: 0.7rem; color: var(--white); }
+
+.article-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(62, 155, 79, 0.2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+
+.article-meta-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Article Body ===== */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+.article-body p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body em {
+  color: var(--text-secondary);
+}
+
+.article-body ul, .article-body ol {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.75rem;
+}
+
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem 0;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  border-left: 4px solid var(--primary);
+  margin: 2rem 0;
+  padding: 1.25rem 1.75rem;
+  background: var(--primary-light);
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote p {
+  font-style: italic;
+  color: var(--text-primary) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--text-light);
+}
+
+/* ===== Callout Boxes ===== */
+.callout {
+  background: var(--warm-bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.callout p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== Method Box ===== */
+.method-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+}
+
+.method-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.method-box p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.method-box p:last-child {
+  margin-bottom: 0;
+}
+
+.method-box ul {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.method-box li {
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Badges ===== */
+.badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.badge-easy {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-iphone {
+  background: #E8EDF5;
+  color: #4A6FA5;
+}
+
+.badge-setup {
+  background: var(--warm-bg-alt);
+  color: var(--text-secondary);
+}
+
+/* ===== Soft CTA ===== */
+.soft-cta {
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.soft-cta p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+.soft-cta a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.soft-cta a:hover {
+  color: var(--primary-dark);
+}
+
+/* ===== Image Placeholders ===== */
+.img-placeholder {
+  background: var(--warm-bg-alt);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin: 2rem 0;
+}
+
+.img-placeholder em {
+  color: var(--text-light);
+}
+
+/* ===== Comparison Table ===== */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  background: var(--text-primary);
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.comparison-table th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.comparison-table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.comparison-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background: var(--warm-bg-alt);
+}
+
+/* ===== FAQ Items ===== */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-item h3 {
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.faq-item p {
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== CTA Box ===== */
+.article-cta {
+  background: var(--primary-dark);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin: 3rem 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 1rem !important;
+  max-width: 480px;
+  margin: 0 auto 1.5rem !important;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(62, 155, 79, 0.3);
+}
+
+/* ===== Sources ===== */
+.article-sources {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-sources h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+}
+
+.source-list li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.source-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+.source-list a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.source-list a:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+
+/* ===== Footer (matches homepage) ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo span { color: var(--accent); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .btn-nav-cta { display: none; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .nav-links.open a { color: var(--text-secondary); }
+  .nav-links.open a::after { background: var(--primary); }
+  .nav-links.open a:hover { color: var(--text-primary); }
+
+  .nav-links.open .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+    padding: 0.25rem 0 0 1rem;
+    min-width: auto;
+  }
+
+  .nav-links.open .dropdown li a {
+    padding: 0.35rem 0;
+    font-size: 0.78rem;
+    color: var(--text-light) !important;
+  }
+
+  .nav-links.open .dd-arrow { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .article-body { padding: 2.5rem 1.5rem 4rem; }
+}
+
+@media (max-width: 600px) {
+  .article-header { padding: 6rem 1.25rem 2.5rem; }
+  .article-title { font-size: 1.6rem; }
+  .article-meta { flex-wrap: wrap; gap: 0.75rem; }
+  .article-cta { padding: 2rem 1.5rem; }
+  .nav-brand-logo { height: 32px; }
+  .nav-brand-text { font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="Good Neighbor Tech logo" class="nav-brand-logo">
+    <span class="nav-brand-text">Good Neighbor Tech</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services">Device Setup &amp; Help</a></li>
+          <li><a href="index.html#services">Security &amp; Scam Protection</a></li>
+          <li><a href="index.html#services">Stay Connected</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#about">About <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="index.html#testimonials">Kind Words</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="resources.html">Resources <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="resources.html">Guides &amp; Tips</a></li>
+          <li><a href="resources.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="tel:4062244101" class="nav-phone">&#x1F4DE; (406) 224-4101</a>
+    <a href="index.html#hero" class="btn-nav-cta">Book Now</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Article Header ===== -->
+<header class="article-header">
+  <div class="article-header-content">
+    <a href="blog.html" class="article-back"><span>←</span> Back to Blog</a>
+    <div class="article-category">Staying Connected</div>
+    <h1 class="article-title">5 Ways to Share Photos With Your Family Without Printing Them</h1>
+    <div class="article-meta">
+      <span>Good Neighbor Tech</span>
+      <div class="article-meta-divider"></div>
+      <span>March 2026</span>
+      <div class="article-meta-divider"></div>
+      <span>8 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Article Body ===== -->
+<article class="article-body">
+
+  <div class="img-placeholder">
+    [Image: Missoula senior looking at photos of grandchildren on a tablet, smiling]<br>
+    <em>Alt text: "Missoula senior viewing family photos on tablet at home"</em>
+  </div>
+
+  <div class="callout">
+    <p><strong>Quick Answer:</strong> The easiest option for most Missoula seniors: a <strong>shared Google Photos album</strong> — free, works on any phone, and your family can add photos anytime. Want something even simpler? A <strong>digital photo frame</strong> means you never touch an app at all — your grandkids send photos straight to your frame. Both cost nothing to start.</p>
+  </div>
+
+  <p>You don't want a cloud storage tutorial. You want to see pictures of your grandkids — the birthday party you missed, the first day of school, the goofy face they made at dinner last Tuesday. That's not a technology problem. That's a "nobody showed me the easy way" problem.</p>
+
+  <p>Missoula seniors share photos with family every day without printing a single one. Here are five ways to do it — ranked from simplest to slightly more involved — so you can pick the one that fits how you already use your phone.</p>
+
+  <h2>At a Glance: Which Option Is Right for You?</h2>
+
+  <div class="table-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>#</th><th>Method</th><th>Best For</th><th>Effort</th><th>Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Digital Photo Frame</strong></td><td>Seniors who want zero effort after setup</td><td>One-time setup</td><td>$50–$150 frame</td></tr>
+        <tr><td>2</td><td><strong>Text Message / iMessage</strong></td><td>Sharing one or two photos quickly</td><td>Very easy</td><td>Free</td></tr>
+        <tr><td>3</td><td><strong>Google Photos Shared Album</strong></td><td>Any phone, any family member</td><td>Easy</td><td>Free</td></tr>
+        <tr><td>4</td><td><strong>iCloud Shared Album</strong></td><td>iPhone and iPad families</td><td>Easy</td><td>Free</td></tr>
+        <tr><td>5</td><td><strong>WhatsApp or Messenger Group</strong></td><td>Families already in a group chat</td><td>Easy</td><td>Free</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The 5 Methods</h2>
+
+  <!-- METHOD 1 -->
+  <div class="method-box">
+    <h3>1. Digital Photo Frame <span class="badge badge-setup">Best for Missoula Seniors Who Hate Apps</span></h3>
+    <p>A digital photo frame sits on your mantle or nightstand and displays a slideshow of family photos — automatically. Your kids or grandkids send photos from anywhere in the world, and the frame updates on its own. You don't touch an app. You don't log in. You just look at it.</p>
+    <p><strong>How it works:</strong> Your family downloads a free app (like Nixplay or Skylight) on their phones. They add photos to your frame from wherever they are — Missoula, Bozeman, Seattle, anywhere. The frame shows the new photo within minutes.</p>
+    <p><strong>Good options:</strong> Nixplay ($100–$130), Skylight Frame ($100), Amazon Echo Show ($80–$250 — doubles as a video call screen too).</p>
+    <div class="callout"><p>💡 This is the most popular setup Good Neighbor Tech installs for Missoula seniors. One visit, one setup, and it runs itself from there.</p></div>
+  </div>
+
+  <!-- METHOD 2 -->
+  <div class="method-box">
+    <h3>2. Text Message / iMessage <span class="badge badge-easy">Already On Your Phone</span></h3>
+    <p>You already know how to text. Sending a photo is the same thing — just attach a picture first. This works for sharing one or two photos at a time and requires nothing new to learn.</p>
+    <p><strong>To send a photo by text:</strong></p>
+    <ul>
+      <li>Open your Messages app and tap the conversation with your family member.</li>
+      <li>Tap the small photo icon (📷) next to the text box.</li>
+      <li>Pick a photo from your library and tap Send.</li>
+    </ul>
+    <p><strong>Limitation:</strong> texting works well for one-off photos but gets messy for sharing big batches. For regular family photo sharing in Missoula, one of the album options below works better.</p>
+  </div>
+
+  <!-- METHOD 3 -->
+  <div class="method-box">
+    <h3>3. Google Photos Shared Album <span class="badge badge-easy">Works on Any Phone</span></h3>
+    <p>Google Photos is free, works on iPhone and Android, and lets you create a shared album that your whole Missoula family can add to and view — from anywhere. Once it's set up, anyone in the family can drop photos in and everyone sees them automatically.</p>
+    <p><strong>To create a shared album:</strong></p>
+    <ul>
+      <li>Download <strong>Google Photos</strong> (free in the App Store or Play Store).</li>
+      <li>Tap <strong>Library</strong> → <strong>New album</strong> → name it (e.g., "Family Photos 2026").</li>
+      <li>Tap <strong>Share</strong> and send the link to your family by text or email.</li>
+      <li>Once they join, anyone can add photos and everyone sees them.</li>
+    </ul>
+    <p>This is the best all-around option for Missoula families with a mix of iPhone and Android users.</p>
+  </div>
+
+  <!-- METHOD 4 -->
+  <div class="method-box">
+    <h3>4. iCloud Shared Album <span class="badge badge-iphone">iPhone &amp; iPad Families</span></h3>
+    <p>If everyone in your Missoula family uses an iPhone or iPad, iCloud Shared Albums are already built into your Photos app — nothing to download. Create an album, invite your family, and everyone can add and view photos in one place.</p>
+    <p><strong>To set one up:</strong></p>
+    <ul>
+      <li>Open the <strong>Photos</strong> app → tap <strong>Albums</strong> → tap the <strong>+</strong> button → choose <strong>New Shared Album</strong>.</li>
+      <li>Name it and invite family members by their iPhone email or phone number.</li>
+      <li>They'll get a notification to join. Once they do, everyone can add photos.</li>
+    </ul>
+    <div class="callout"><p>💡 iCloud Shared Albums only work between Apple devices. If any family member has an Android phone, use Google Photos instead.</p></div>
+  </div>
+
+  <!-- METHOD 5 -->
+  <div class="method-box">
+    <h3>5. WhatsApp or Facebook Messenger Group <span class="badge badge-easy">If Your Family Already Uses It</span></h3>
+    <p>If your Missoula family already has a group chat on WhatsApp or Facebook Messenger, you can share photos right there — no new app needed. Tap the photo icon in the chat, pick a photo, and send. Everyone in the group sees it instantly.</p>
+    <p>This isn't the most organized option for building a photo library, but it's the fastest for sharing in the moment — grandkid's soccer game, a Missoula sunset, a funny moment at dinner.</p>
+  </div>
+
+  <div class="soft-cta">
+    <p>🏠 <strong>Want help setting any of this up in Missoula?</strong> Good Neighbor Tech makes house calls across Missoula — Rattlesnake, Southgate, Orchard Homes, downtown, and surrounding areas. We'll set up whichever option fits your family on your actual device. <a href="index.html#contact">Schedule a visit.</a></p>
+  </div>
+
+  <div class="img-placeholder">
+    [Image: Digital photo frame on a Missoula living room shelf displaying grandchildren photos]<br>
+    <em>Alt text: "Digital photo frame in Missoula senior home displaying family photos"</em>
+  </div>
+
+  <h2>Which One Should You Pick?</h2>
+
+  <ul>
+    <li><strong>You want zero ongoing effort:</strong> Get a digital photo frame. One setup, done forever.</li>
+    <li><strong>Your whole family has iPhones:</strong> Use iCloud Shared Album — it's already on your phone.</li>
+    <li><strong>Your family uses a mix of phones:</strong> Use Google Photos — it works for everyone.</li>
+    <li><strong>You just want to send a photo right now:</strong> Text it. Simple as that.</li>
+    <li><strong>Your family already has a group chat:</strong> Share there and skip the extra app.</li>
+  </ul>
+
+  <div class="soft-cta">
+    <p>📱 <strong>Not sure what phone your family uses?</strong> That's the first question Good Neighbor Tech asks every Missoula senior before recommending a photo sharing setup. Call us for a free 10-minute consultation and we'll point you to the right option. <a href="index.html#contact">Get free advice.</a></p>
+  </div>
+
+  <h2>Common Questions from Missoula Seniors</h2>
+
+  <div class="faq-item">
+    <h3>Are these photo sharing options safe? Who can see my photos?</h3>
+    <p>Yes — all five options let you control exactly who sees your photos. Shared albums and group chats are private to the people you invite. Nobody outside your Missoula family can see them unless you specifically share the link.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Will sharing photos use up all my phone storage?</h3>
+    <p>Google Photos stores your photos in the cloud — not on your phone — so it doesn't eat up your storage. iCloud Shared Albums are the same. Texting photos does use a small amount of phone storage, but for most Missoula seniors it's not a concern.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What's the easiest digital photo frame for a Missoula senior?</h3>
+    <p>The <strong>Skylight Frame</strong> is the most beginner-friendly — your family emails photos directly to the frame's address and they appear automatically. No app required on your end at all. Good Neighbor Tech can set one up during an in-home visit anywhere in Missoula.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I still print photos after sharing them digitally?</h3>
+    <p>Absolutely. Sharing photos digitally doesn't replace printing — it just means you and your family can also see them anytime, anywhere. Google Photos even has a built-in print ordering feature if you want a physical copy.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if I accidentally delete a photo?</h3>
+    <p>Google Photos and iCloud both keep deleted photos in a "Trash" or "Recently Deleted" folder for 30 days — so you can recover them. And since photos in a shared album are stored in the cloud, deleting from your phone doesn't remove them from the album.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can someone help me set this up at my home in Missoula?</h3>
+    <p>Yes — that's exactly what Good Neighbor Tech does for Missoula seniors. We come to you, figure out which option fits your family best, and get it set up on your device before we leave. <a href="index.html#services">Learn more about in-home tech help for Missoula seniors.</a></p>
+  </div>
+
+  <div class="img-placeholder">
+    [Image: Missoula senior and adult child looking at shared family photos together on a phone]<br>
+    <em>Alt text: "Missoula senior and family member viewing shared photos on smartphone"</em>
+  </div>
+
+  <h2>Stay in the Loop, Missoula</h2>
+
+  <p>You don't need to understand cloud storage to see your grandkids' pictures. You just need one of these five options set up on your phone — and someone patient enough to walk you through it once.</p>
+
+  <p>The photos are already being taken. They're already out there. This is just about making sure they land in your hands too.</p>
+
+  <p>Once you're set up with photos, take a look at our <a href="/video-call-grandkids-missoula-seniors">guide to video calling your grandkids for Missoula seniors</a> — seeing their faces is even better than seeing their pictures. And if you just got a new phone and want to start fresh, our <a href="/new-device-setup-missoula-seniors">new device setup guide for Missoula seniors</a> covers everything from day one. Also worth bookmarking: our <a href="/digital-organization-missoula">digital organization guide for Missoula households</a> to keep all those photos backed up and organized long-term.</p>
+
+  <div class="article-cta">
+    <h3>Need Help Setting This Up in Missoula?</h3>
+    <p>Good Neighbor Tech provides patient, in-home tech support for older adults across Missoula and western Montana. We'll get your photos flowing to and from family — on your device, at your pace.</p>
+    <a href="index.html#contact" class="btn btn-primary">Schedule a Visit</a>
+  </div>
+
+  <div class="article-sources">
+    <h3>Helpful Resources</h3>
+    <ul class="source-list">
+      <li><a href="https://support.google.com/photos/answer/6131416" target="_blank" rel="noopener">Google Photos — How to create a shared album</a></li>
+      <li><a href="https://support.apple.com/en-us/HT202786" target="_blank" rel="noopener">Apple Support — How to use iCloud Shared Albums</a></li>
+      <li><a href="https://myskylight.com/pages/support/" target="_blank" rel="noopener">Skylight Frame — Setup guide</a></li>
+      <li><a href="https://www.aarp.org/pri/topics/technology/internet-media-devices/2026-technology-trends-older-adults/" target="_blank" rel="noopener">AARP — Best Photo Sharing Apps for Families</a></li>
+      <li><a href="https://missoulaagingservices.org" target="_blank" rel="noopener">Missoula Aging Services — Local support for Missoula seniors</a></li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Good Neighbor Tech">
+    <div class="footer-logo">Good Neighbor Tech<span>.</span></div>
+  </div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+</script>
+
+</body>
+</html>

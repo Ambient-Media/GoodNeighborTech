@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B87GG61EHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B87GG61EHW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Taught My 92-Year-Old Grandfather to Use AI. Here's What Happened. | Good Neighbor Tech Missoula</title>
+<meta name="description" content="A Missoula grandson gifted his 92-year-old grandfather a Perplexity AI subscription for the holidays. Two months later, Courtney called it the best gift he'd ever received. Here's what happened.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables (from homepage) ===== */
+:root {
+  --primary: #2B6CB0;
+  --primary-dark: #1E3A5F;
+  --primary-light: #EBF2FA;
+  --accent: #3E9B4F;
+  --accent-dark: #348542;
+  --cta: #E85D3A;
+  --cta-dark: #D04E2E;
+  --warm-bg: #F9F7F4;
+  --warm-bg-alt: #F1EDE6;
+  --white: #FFFFFF;
+  --text-primary: #2D3748;
+  --text-secondary: #5A6577;
+  --text-light: #8B95A5;
+  --border: #D8DDE5;
+  --shadow: rgba(45, 55, 72, 0.08);
+  --font-display: 'Nunito', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-bg);
+  line-height: 1.8;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--primary-dark); }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation (matches homepage) ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.nav-brand-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-nav-cta {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: var(--text-primary);
+  color: var(--white);
+  transition: all 0.35s ease;
+}
+
+.btn-nav-cta:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Nav Dropdowns */
+.has-dropdown { position: relative; }
+
+.dd-arrow {
+  font-size: 0.6em;
+  margin-left: 0.15rem;
+  opacity: 0.7;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+}
+
+.dropdown li a::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Article Header ===== */
+.article-header {
+  padding: 7rem 2rem 3rem;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  transition: gap 0.3s ease, color 0.2s;
+}
+
+.article-back:hover { gap: 0.7rem; color: var(--white); }
+
+.article-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(62, 155, 79, 0.2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+
+.article-meta-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Article Body ===== */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+.article-body p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body em {
+  color: var(--text-secondary);
+}
+
+.article-body ul, .article-body ol {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.75rem;
+}
+
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem 0;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  border-left: 4px solid var(--primary);
+  margin: 2rem 0;
+  padding: 1.25rem 1.75rem;
+  background: var(--primary-light);
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote p {
+  font-style: italic;
+  color: var(--text-primary) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--text-light);
+}
+
+/* ===== Callout Boxes ===== */
+.callout {
+  background: var(--warm-bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.callout p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== Soft CTA ===== */
+.soft-cta {
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.soft-cta p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+.soft-cta a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.soft-cta a:hover {
+  color: var(--primary-dark);
+}
+
+/* ===== Image Placeholders ===== */
+.img-placeholder {
+  background: var(--warm-bg-alt);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin: 2rem 0;
+}
+
+.img-placeholder em {
+  color: var(--text-light);
+}
+
+/* ===== FAQ Items ===== */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-item h3 {
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.faq-item p {
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== CTA Box ===== */
+.article-cta {
+  background: var(--primary-dark);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin: 3rem 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 1rem !important;
+  max-width: 480px;
+  margin: 0 auto 1.5rem !important;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(62, 155, 79, 0.3);
+}
+
+/* ===== Sources ===== */
+.article-sources {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-sources h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+}
+
+.source-list li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.source-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+.source-list a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.source-list a:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+
+/* ===== Footer (matches homepage) ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo span { color: var(--accent); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .btn-nav-cta { display: none; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .nav-links.open a { color: var(--text-secondary); }
+  .nav-links.open a::after { background: var(--primary); }
+  .nav-links.open a:hover { color: var(--text-primary); }
+
+  .nav-links.open .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+    padding: 0.25rem 0 0 1rem;
+    min-width: auto;
+  }
+
+  .nav-links.open .dropdown li a {
+    padding: 0.35rem 0;
+    font-size: 0.78rem;
+    color: var(--text-light) !important;
+  }
+
+  .nav-links.open .dd-arrow { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .article-body { padding: 2.5rem 1.5rem 4rem; }
+}
+
+@media (max-width: 600px) {
+  .article-header { padding: 6rem 1.25rem 2.5rem; }
+  .article-title { font-size: 1.6rem; }
+  .article-meta { flex-wrap: wrap; gap: 0.75rem; }
+  .article-cta { padding: 2rem 1.5rem; }
+  .nav-brand-logo { height: 32px; }
+  .nav-brand-text { font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="Good Neighbor Tech logo" class="nav-brand-logo">
+    <span class="nav-brand-text">Good Neighbor Tech</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services">Device Setup &amp; Help</a></li>
+          <li><a href="index.html#services">Security &amp; Scam Protection</a></li>
+          <li><a href="index.html#services">Stay Connected</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#about">About <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="index.html#testimonials">Kind Words</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="resources.html">Resources <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="resources.html">Guides &amp; Tips</a></li>
+          <li><a href="resources.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="tel:4062244101" class="nav-phone">&#x1F4DE; (406) 224-4101</a>
+    <a href="index.html#hero" class="btn-nav-cta">Book Now</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Article Header ===== -->
+<header class="article-header">
+  <div class="article-header-content">
+    <a href="blog.html" class="article-back"><span>←</span> Back to Blog</a>
+    <div class="article-category">AI &amp; Technology</div>
+    <h1 class="article-title">I Taught My 92-Year-Old Grandfather to Use AI. Here's What Happened.</h1>
+    <div class="article-meta">
+      <span>Noah Reich</span>
+      <div class="article-meta-divider"></div>
+      <span>March 2026</span>
+      <div class="article-meta-divider"></div>
+      <span>10 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Article Body ===== -->
+<article class="article-body">
+
+  <div class="img-placeholder">
+    [Image: Older man sitting at a desk with a tablet, engaged and focused — bright, warm setting]<br>
+    <em>Alt text: "92-year-old man using AI on a tablet, engaged and curious"</em>
+  </div>
+
+  <p>I called my grandfather last week to interview him for this article. Halfway through the call, his phone alarm went off. He couldn't figure out how to stop it — so he turned his phone off, turned it back on, and called me back.</p>
+
+  <p>"When I hang up after this," he told me, "I'm going to ask Perplexity what happened."</p>
+
+  <p>He didn't need to have the answer yet. His first instinct was just to go ask.</p>
+
+  <p>That is Courtney. Ninety-two years old. Former CEO of a manufacturing company. Current member of his city planning board in Desert Hot Springs, California — and the person who inspired me to start Good Neighbor Tech here in Missoula. And as of this past holiday season — a daily Perplexity AI user who opens the app an average of three times a day.</p>
+
+  <p>I'm based in Missoula, Montana, where I run Good Neighbor Tech — an in-home tech support service for older adults across Missoula and western Montana. I gifted him a six-month AI subscription for the holidays because I genuinely believed it could help him. Two months later, he called me — me, his Missoula-based grandson — to say it was the best gift he had ever received.</p>
+
+  <p>I want to tell you what happened — because if it worked for a 92-year-old who was skeptical, it can probably work for the older adult in your life too.</p>
+
+  <h2>Who Courtney Is — And Why That Matters</h2>
+
+  <p>Before I tell you what AI did for my grandfather, I want to tell you who he is. Because the story only makes sense with that context.</p>
+
+  <p>My grandfather retired early after building and leading a manufacturing company. He thrives on learning, on solving problems, on taking on new projects. At 92, he serves on a city planning board where he helps guide decisions about municipal budgeting and expansion. He is not a person who sits still.</p>
+
+  <p>Like many Missoula seniors I meet, my grandfather also had a "computer guru" — a tech-savvy person he called when he had questions he couldn't answer himself. He paid a gig worker to do research and build graphs to support his city planning work. He was managing complexity through other people.</p>
+
+  <p>That's not unusual. Most sharp, capable Missoula seniors I work with have workarounds like this — people they call, services they pay for — because nobody ever showed them a better way.</p>
+
+  <blockquote>
+    <p>"I thought AI was just an enhanced Google. Better at answering questions. I didn't realize it was a way to actually do work."</p>
+    <cite>— Courtney, 92</cite>
+  </blockquote>
+
+  <h2>The Moment It Changed</h2>
+
+  <p>My grandfather started exactly where most Missoula seniors start — with tech questions about his devices. Safe territory — the same kinds of things he used to call his computer guru about. Perplexity answered them well. He kept going.</p>
+
+  <p>Then came health questions. <em>Is my dermatologist right about this?</em> He'd ask, read the answer, and go back to his doctor better informed. ("Yes, they were right. Listen to them," he told me, laughing.)</p>
+
+  <p>But the real turning point was his city planning work.</p>
+
+  <p>Courtney had been paying a gig worker to research wealth distribution across different cities and build graphs to help him think through municipal budgeting and expansion planning. It was real analytical work — the kind of thing you'd hire someone for.</p>
+
+  <p>One day he realized he could just ask Perplexity.</p>
+
+  <p>Not only could it pull the research — it could help him think through the problem, suggest angles he hadn't considered, and summarize findings in plain language. The gig worker became optional. The dependency disappeared.</p>
+
+  <blockquote>
+    <p>"It felt exciting. The realization that I didn't have to call on experts for most things anymore."</p>
+    <cite>— Courtney, 92</cite>
+  </blockquote>
+
+  <div class="img-placeholder">
+    [Image: Hands of an older adult typing or speaking into a tablet — warm, natural light]<br>
+    <em>Alt text: "Senior using voice input on tablet to ask AI a question"</em>
+  </div>
+
+  <h2>What He Actually Uses It For</h2>
+
+  <p>Here's where the story gets specific — and specific is what makes it real. These aren't hypothetical use cases. These are the actual things my grandfather has used Perplexity for in the past two months.</p>
+
+  <ul>
+    <li><strong>Health questions.</strong> Cross-checking his doctors, understanding diagnoses, asking follow-up questions he forgot to ask in the office. He always verifies — but he shows up to appointments better prepared now.</li>
+    <li><strong>City planning research.</strong> Pulling data on municipal budgets, wealth distribution, and expansion strategies — work he used to outsource to a gig worker. He does it himself now.</li>
+    <li><strong>His grandmother's Samsung Galaxy.</strong> Grandma had stopped using her phone because the Samsung Galaxy felt too complex. My grandfather assumed she needed a new, simpler device — and started looking at options. Instead, he asked Perplexity. It walked him through simplifying her phone's settings. She uses it now. No new phone. No headache. Money saved.</li>
+    <li><strong>The eclipse.</strong> He saw it and was confused — why wasn't the full moon actually full? Perplexity explained what he was seeing in real time. "I just asked it right there," he said.</li>
+    <li><strong>His Ring doorbell and cameras.</strong> Setup questions, troubleshooting issues, understanding settings. Problems that used to require a call to someone.</li>
+    <li><strong>The cat.</strong> Their cat was driving them crazy begging for food. Perplexity recommended an automatic feeder. He bought one, then added a camera to monitor it. "It's working great," he reported, completely serious.</li>
+    <li><strong>His electric Hyundai and home solar setup.</strong> This one is remarkable. My grandfather has solar panels and a home battery system. Perplexity helped him figure out that he needed to cap his car's charging rate at 60% and restrict charging to certain hours — reducing his grid reliance and optimizing his energy transactions. This is not a simple problem. He solved it with AI.</li>
+  </ul>
+
+  <div class="callout">
+    <p>💡 <strong>For Missoula families:</strong> You don't have to have solar panels for this to apply to you. The point is that AI can help older adults work through genuinely complex, personal problems — not just answer trivia questions.</p>
+  </div>
+
+  <h2>What He Learned About Using AI Well</h2>
+
+  <p>My grandfather didn't just use AI — he got good at it. A few things he figured out on his own that are worth passing along.</p>
+
+  <ul>
+    <li><strong>It tries to tell you what you want to hear.</strong> My grandfather noticed early that Perplexity sometimes steered toward the answer it thought he was looking for rather than pushing back. He learned to ask sharper questions and not accept the first response as gospel.</li>
+    <li><strong>He started talking instead of typing.</strong> Switching to voice input was a turning point. It made the whole experience faster and more natural, and his usage went up significantly after he made the switch.</li>
+    <li><strong>He takes notes.</strong> After a useful conversation, he asks Perplexity for a summary and key takeaways — then writes them down. He revisits old topics in Perplexity Spaces to refresh his memory. He treats it like a research partner, not a magic answer machine.</li>
+    <li><strong>My grandfather caught himself getting lazy — a pattern I see with Missoula seniors too once the novelty wears off.</strong> He noticed he was asking the same question every few days instead of retaining the answer. The note-taking habit fixed that.</li>
+    <li><strong>He never trusts it 100%.</strong> Especially on health. He uses it to get informed, not to replace his doctors.</li>
+  </ul>
+
+  <div class="soft-cta">
+    <p>📖 <strong>Want a full beginner's guide?</strong> We wrote a complete <a href="/ai-help-seniors-missoula">AI guide for Missoula seniors</a> — including how to get started with Perplexity, what questions to ask first, and how to stay safe. It's free and takes about 10 minutes to read.</p>
+  </div>
+
+  <h2>What He'd Tell Someone His Age</h2>
+
+  <p>I asked my grandfather what he says when friends ask him about AI. He didn't hesitate.</p>
+
+  <blockquote>
+    <p>"Have you used AI? You should try it."</p>
+    <cite>— Courtney, 92</cite>
+  </blockquote>
+
+  <p>Most of my grandfather's friends know he uses Perplexity. Several have started using it themselves — which mirrors what I see happening in Missoula senior communities too. Some have started. Some are still skeptical. His answer to everyone — skeptics included — is the same: just try it.</p>
+
+  <p>My grandfather was skeptical too, at the beginning — just like most Missoula seniors I sit down with for the first time. Not because he was afraid of it. But because he wasn't sure he could figure it out. The phone alarm that interrupted our interview — and the fact that he immediately asked Perplexity how to fix it — is his answer to that doubt.</p>
+
+  <h2>What This Means for Missoula Families</h2>
+
+  <p>I live and work in Missoula. The older adults I help here are sharp, capable people who spent their lives solving hard problems. What they're missing isn't ability — it's someone patient enough to show them the right tools.</p>
+
+  <p>My grandfather lives in California. I couldn't sit with him in person — but a gift and a phone call was enough to get him started. Almost every Missoula senior I've worked with has a moment, usually about 20 minutes in, where something clicks: <em>"Wait — I can use this for that too?"</em> That moment is what Good Neighbor Tech exists for. And helping Missoula families get there faster — whether across Missoula or across the country — is exactly what we do.</p>
+
+  <div class="soft-cta">
+    <p>🏠 <strong>In Missoula and want to try this with someone you love?</strong> Good Neighbor Tech offers in-home AI training sessions for older adults across Missoula — Rattlesnake, Southgate, Orchard Homes, downtown, and surrounding areas. We'll bring the patience. They bring the curiosity. <a href="/contact">Schedule a visit.</a></p>
+  </div>
+
+  <div class="img-placeholder">
+    [Image: Adult grandchild and older adult looking at a phone or tablet together, warm and candid]<br>
+    <em>Alt text: "Grandson helping grandfather learn to use AI on a tablet"</em>
+  </div>
+
+  <h2>Common Questions About AI for Seniors</h2>
+
+  <div class="faq-item">
+    <h3>What's the difference between Perplexity and ChatGPT?</h3>
+    <p>Perplexity pulls live information from the internet and cites its sources — so you can see where the answer came from and verify it. ChatGPT generates responses from its training data, which has a knowledge cutoff. For older adults who want to fact-check and stay current, Perplexity is generally the better starting point.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does my parent or grandparent need to be tech-savvy to use AI?</h3>
+    <p>No. My grandfather started by typing simple questions. He didn't need any special skills — just curiosity and a willingness to try. The switch to voice input made it even easier. If they can make a phone call, they can use Perplexity. And once they're comfortable with AI, many Missoula seniors naturally want to try <a href="/video-call-grandkids-missoula-seniors">video calling family</a> next.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I get a skeptical older adult to try AI?</h3>
+    <p>Don't lecture — demonstrate. Find a real problem they have right now and solve it together. Start with something they're genuinely curious about — a health question, a tech issue they've been putting off, something from the news. His skepticism wasn't fear — it was doubt that he could figure it out. That doubt disappeared the first time he got a useful answer. The same thing happens every time I do this with Missoula seniors.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can someone help me set this up for a parent or grandparent in Missoula?</h3>
+    <p>Yes — Good Neighbor Tech offers in-home AI training sessions for older adults across Missoula and western Montana. We set up Perplexity on their device, walk through their first real questions together, and make sure they leave feeling confident. <a href="/tech-help-missoula-seniors">Learn more about in-home tech help for Missoula seniors.</a></p>
+  </div>
+
+  <h2>One Last Thing Courtney Said</h2>
+
+  <p>At the end of our call — after the alarm, after the solar panels, after the cat feeder — I asked my grandfather what he would tell a 90-year-old who was nervous about trying AI.</p>
+
+  <p>He thought about it for a second.</p>
+
+  <p>"I'd tell them it's not as hard as they think. And that the only way to find out is to ask it something."</p>
+
+  <p>My grandfather is 92. He's on a city planning board. He's optimizing his energy grid. And the best gift he's ever received fits in his pocket.</p>
+
+  <p>If you're in Missoula and you want to give someone you love that same feeling — we can help you get there. That's what Good Neighbor Tech is for.</p>
+
+  <!-- ===== CTA ===== -->
+  <div class="article-cta">
+    <h3>Ready to Try AI With a Missoula Senior You Love?</h3>
+    <p>Good Neighbor Tech provides patient, in-home AI training for older adults across Missoula and western Montana. We come to your Missoula home, set up Perplexity on their device, and make sure the first session actually sticks.</p>
+    <a href="index.html#contact" class="btn btn-primary">Schedule a Visit</a>
+  </div>
+
+  <!-- ===== Sources ===== -->
+  <div class="article-sources">
+    <h3>Related Reading</h3>
+    <ul class="source-list">
+      <li><a href="/ai-help-seniors-missoula">AI Help for Missoula Seniors: Getting Started with Perplexity</a></li>
+      <li><a href="/scam-prevention-missoula-seniors">Scam Prevention Guide for Missoula Seniors</a></li>
+      <li><a href="/tech-help-missoula-seniors">In-Home Tech Help for Missoula Seniors</a></li>
+      <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity AI — Try it free</a></li>
+      <li><a href="https://www.aarp.org/pri/topics/technology/internet-media-devices/2026-technology-trends-older-adults/" target="_blank" rel="noopener">AARP — How Older Adults Are Using Technology in 2026</a></li>
+      <li><a href="https://missoulaagingservices.org" target="_blank" rel="noopener">Missoula Aging Services — Local support for older adults</a></li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Good Neighbor Tech">
+    <div class="footer-logo">Good Neighbor Tech<span>.</span></div>
+  </div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+</script>
+
+</body>
+</html>

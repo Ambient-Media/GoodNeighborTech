@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B87GG61EHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B87GG61EHW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Video Call Your Grandkids | Simple Guide for Missoula Seniors</title>
+<meta name="description" content="Simple guide to video calling your grandkids in Missoula. FaceTime, Zoom, or Google Meet — we'll tell you which one to use and exactly what to tap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables (from homepage) ===== */
+:root {
+  --primary: #2B6CB0;
+  --primary-dark: #1E3A5F;
+  --primary-light: #EBF2FA;
+  --accent: #3E9B4F;
+  --accent-dark: #348542;
+  --cta: #E85D3A;
+  --cta-dark: #D04E2E;
+  --warm-bg: #F9F7F4;
+  --warm-bg-alt: #F1EDE6;
+  --white: #FFFFFF;
+  --text-primary: #2D3748;
+  --text-secondary: #5A6577;
+  --text-light: #8B95A5;
+  --border: #D8DDE5;
+  --shadow: rgba(45, 55, 72, 0.08);
+  --font-display: 'Nunito', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-bg);
+  line-height: 1.8;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--primary-dark); }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation (matches homepage) ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.nav-brand-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-nav-cta {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: var(--text-primary);
+  color: var(--white);
+  transition: all 0.35s ease;
+}
+
+.btn-nav-cta:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Nav Dropdowns */
+.has-dropdown { position: relative; }
+
+.dd-arrow {
+  font-size: 0.6em;
+  margin-left: 0.15rem;
+  opacity: 0.7;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+}
+
+.dropdown li a::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Article Header ===== */
+.article-header {
+  padding: 7rem 2rem 3rem;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  transition: gap 0.3s ease, color 0.2s;
+}
+
+.article-back:hover { gap: 0.7rem; color: var(--white); }
+
+.article-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(62, 155, 79, 0.2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+
+.article-meta-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Article Body ===== */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+.article-body p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body em {
+  color: var(--text-secondary);
+}
+
+.article-body ul, .article-body ol {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.75rem;
+}
+
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem 0;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  border-left: 4px solid var(--primary);
+  margin: 2rem 0;
+  padding: 1.25rem 1.75rem;
+  background: var(--primary-light);
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote p {
+  font-style: italic;
+  color: var(--text-primary) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--text-light);
+}
+
+/* ===== Callout Boxes ===== */
+.callout {
+  background: var(--warm-bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.callout p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== Soft CTA ===== */
+.soft-cta {
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.soft-cta p {
+  margin-bottom: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+.soft-cta a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.soft-cta a:hover {
+  color: var(--primary-dark);
+}
+
+/* ===== Image Placeholders ===== */
+.img-placeholder {
+  background: var(--warm-bg-alt);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin: 2rem 0;
+}
+
+.img-placeholder em {
+  color: var(--text-light);
+}
+
+/* ===== FAQ Items ===== */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-item h3 {
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.faq-item p {
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ===== Comparison Table ===== */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  background: var(--text-primary);
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.comparison-table th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.comparison-table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.comparison-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background: var(--warm-bg-alt);
+}
+
+/* ===== CTA Box ===== */
+.article-cta {
+  background: var(--primary-dark);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin: 3rem 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.article-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 1rem !important;
+  max-width: 480px;
+  margin: 0 auto 1.5rem !important;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(62, 155, 79, 0.3);
+}
+
+/* ===== Sources ===== */
+.article-sources {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-sources h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+}
+
+.source-list li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.source-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+.source-list a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.source-list a:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+
+/* ===== Footer (matches homepage) ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo span { color: var(--accent); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .btn-nav-cta { display: none; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .nav-links.open a { color: var(--text-secondary); }
+  .nav-links.open a::after { background: var(--primary); }
+  .nav-links.open a:hover { color: var(--text-primary); }
+
+  .nav-links.open .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+    padding: 0.25rem 0 0 1rem;
+    min-width: auto;
+  }
+
+  .nav-links.open .dropdown li a {
+    padding: 0.35rem 0;
+    font-size: 0.78rem;
+    color: var(--text-light) !important;
+  }
+
+  .nav-links.open .dd-arrow { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .article-body { padding: 2.5rem 1.5rem 4rem; }
+}
+
+@media (max-width: 600px) {
+  .article-header { padding: 6rem 1.25rem 2.5rem; }
+  .article-title { font-size: 1.6rem; }
+  .article-meta { flex-wrap: wrap; gap: 0.75rem; }
+  .article-cta { padding: 2rem 1.5rem; }
+  .nav-brand-logo { height: 32px; }
+  .nav-brand-text { font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="Good Neighbor Tech logo" class="nav-brand-logo">
+    <span class="nav-brand-text">Good Neighbor Tech</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services">Device Setup &amp; Help</a></li>
+          <li><a href="index.html#services">Security &amp; Scam Protection</a></li>
+          <li><a href="index.html#services">Stay Connected</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#about">About <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="index.html#testimonials">Kind Words</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="resources.html">Resources <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="resources.html">Guides &amp; Tips</a></li>
+          <li><a href="resources.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="tel:4062244101" class="nav-phone">&#x1F4DE; (406) 224-4101</a>
+    <a href="index.html#hero" class="btn-nav-cta">Book Now</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Article Header ===== -->
+<header class="article-header">
+  <div class="article-header-content">
+    <a href="blog.html" class="article-back"><span>←</span> Back to Blog</a>
+    <div class="article-category">Staying Connected</div>
+    <h1 class="article-title">How to Video Call Your Grandkids: A Simple Guide for Missoula Seniors</h1>
+    <div class="article-meta">
+      <span>Good Neighbor Tech</span>
+      <div class="article-meta-divider"></div>
+      <span>March 2026</span>
+      <div class="article-meta-divider"></div>
+      <span>7 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Article Body ===== -->
+<article class="article-body">
+
+  <div class="img-placeholder">
+    [Image: Missoula senior video calling grandchildren on iPad at kitchen table]<br>
+    <em>Alt text: "Missoula senior video calling grandchildren on iPad"</em>
+  </div>
+
+  <div class="callout">
+    <p><strong>Quick Answer:</strong> iPhone or iPad? Use <strong>FaceTime</strong> — it's already on your device and takes one tap. Any other phone or computer? Use <strong>Zoom</strong>. Both are free. This guide shows you exactly what to tap.</p>
+  </div>
+
+  <p>Seeing your grandkids' faces on a screen is one of the best things your phone or tablet can do. Missoula seniors use FaceTime, Zoom, and Google Meet every day to stay close with family across Montana and beyond — and it's simpler than you think.</p>
+
+  <h2>Which App Should You Use?</h2>
+
+  <div class="table-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>App</th><th>Use It If…</th><th>Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>FaceTime</strong></td><td>You and your grandkids both have iPhones or iPads</td><td>Free</td></tr>
+        <tr><td><strong>Zoom</strong></td><td>Your family uses a mix of phones, tablets, or computers</td><td>Free</td></tr>
+        <tr><td><strong>Google Meet</strong></td><td>You have a Gmail address and your family sends you a link</td><td>Free</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Simplest move:</strong> text your grandchild and ask "what app do you use to video call?" Then learn that one. Done.</p>
+
+  <div class="soft-cta">
+    <p>📞 <strong>Not sure where to start?</strong> Good Neighbor Tech offers free phone consultations for Missoula seniors — call before you download anything and we'll point you in the right direction. <a href="#">Get free advice.</a></p>
+  </div>
+
+  <h2>How to Use FaceTime (iPhone &amp; iPad)</h2>
+
+  <ol>
+    <li>Open the green <strong>FaceTime</strong> app.</li>
+    <li>Tap <strong>New FaceTime</strong> in the top right corner.</li>
+    <li>Type your grandchild's name or phone number.</li>
+    <li>Tap the <strong>video camera icon</strong> — not the phone icon.</li>
+    <li>Wait for them to answer. Their face appears on your screen.</li>
+    <li>To hang up: tap the <strong>red X button</strong>.</li>
+  </ol>
+
+  <div class="callout">
+    <p>💡 If it says "FaceTime unavailable," your grandchild probably has an Android phone. Use Zoom instead — it works across all devices for Missoula families with mixed phones.</p>
+  </div>
+
+  <h2>How to Use Zoom</h2>
+
+  <p><strong>Easiest way:</strong> ask your grandchild to text you a Zoom link. Tap it. You're in the call — no account needed. This is how most Missoula families do their first video call.</p>
+
+  <p><strong>To start the call yourself:</strong></p>
+  <ol>
+    <li>Search "Zoom" in the App Store (iPhone) or Play Store (Android) and download it.</li>
+    <li>Sign up with your email address.</li>
+    <li>Tap <strong>New Meeting</strong>, then <strong>Invite</strong>, and send your grandchild a link by text.</li>
+    <li>When they tap it, they join automatically.</li>
+    <li>To hang up: tap the red <strong>Leave</strong> button.</li>
+  </ol>
+
+  <div class="img-placeholder">
+    [Image: Close-up of Zoom "New Meeting" button on tablet held by older adult hands in a Missoula home]<br>
+    <em>Alt text: "Zoom new meeting button on tablet for Missoula senior"</em>
+  </div>
+
+  <div class="soft-cta">
+    <p>🏠 <strong>Want hands-on help in Missoula?</strong> Good Neighbor Tech makes house calls across Missoula — Rattlesnake, Southgate, downtown, Orchard Homes, and surrounding areas. We'll set up the app on your device and do the first call together. <a href="#">Schedule a visit.</a></p>
+  </div>
+
+  <h2>How to Use Google Meet</h2>
+
+  <p>If your grandchild sends you a Google Meet link, just tap it. It works right in your phone's browser — no download needed. Tap "Allow" when it asks for your camera and microphone. You're in. Many Missoula seniors with Gmail accounts find this the least fussy option.</p>
+
+  <h2>When Something Goes Wrong</h2>
+
+  <ul>
+    <li><strong>They can't hear you:</strong> Look for a microphone icon with a red line through it — tap it to unmute.</li>
+    <li><strong>They can't see you:</strong> Look for a camera icon with a red line — tap it to turn your camera on.</li>
+    <li><strong>Call keeps freezing:</strong> Move closer to your Wi-Fi router. Many Missoula homes — especially in the Rattlesnake, Orchard Homes, and Southside neighborhoods — have thick walls that weaken the signal. <a href="#">See our Wi-Fi troubleshooting guide for Missoula homes.</a></li>
+    <li><strong>Accidentally hung up:</strong> Just call back. It happens to everyone.</li>
+  </ul>
+
+  <h2>Common Questions from Missoula Seniors</h2>
+
+  <div class="faq-item">
+    <h3>Does video calling cost money?</h3>
+    <p>No. FaceTime, Zoom, and Google Meet are all free. They use your home Wi-Fi — not your phone plan minutes.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do I need a special camera?</h3>
+    <p>No. Your phone or tablet already has one built in — the camera that faces you when you hold it up.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I call more than one grandchild at once?</h3>
+    <p>Yes. All three apps support group calls. Ask your grandkids to set up the first group call and you'll know exactly how to join every time after that.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>My grandchild has an Android and I have an iPhone — what do we use?</h3>
+    <p>Use Zoom or Google Meet. Both work on any phone, any brand. Most Missoula families in this situation use Zoom.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if I accidentally tap something and get lost?</h3>
+    <p>Look for a back arrow in the top left, or press your Home button. You can't break anything by tapping the wrong thing — worst case, close the app and start over. Also worth reading: our <a href="#">new device setup guide for Missoula seniors</a> covers the basics of navigating your phone with confidence.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can someone help me set this up in person in Missoula?</h3>
+    <p>Yes — Good Neighbor Tech comes to your home in Missoula, sets up the app on your device, and walks you through the first call. No rush, no judgment. <a href="#">Learn more about in-home tech help for Missoula seniors.</a></p>
+  </div>
+
+  <div class="img-placeholder">
+    [Image: Missoula senior smiling during video call with grandchildren — living room setting]<br>
+    <em>Alt text: "Missoula senior smiling during video call with grandchildren on tablet"</em>
+  </div>
+
+  <h2>You've Got This, Missoula</h2>
+
+  <p>Tap a button. See their faces. That's all this is. Once you've done it once, you'll wonder why you waited.</p>
+
+  <p>Once you're comfortable video calling, our <a href="#">scam prevention guide for Missoula seniors</a> is worth a quick read — and our <a href="#">password organization guide for Missoula households</a> helps keep your accounts secure. Need a printable reminder card for your first few calls? Ask us about our <strong>Video Calling Quick Reference Card</strong> — free with any in-home visit.</p>
+
+  <div class="article-cta">
+    <h3>Need Help Setting This Up in Missoula?</h3>
+    <p>Good Neighbor Tech provides patient, in-home tech support for older adults across Missoula and western Montana. We'll get you set up and make your first call together.</p>
+    <a href="#" class="btn btn-primary">Schedule a Visit</a>
+  </div>
+
+  <div class="article-sources">
+    <h3>Helpful Resources</h3>
+    <ul class="source-list">
+      <li><a href="https://support.apple.com/facetime" target="_blank" rel="noopener">Apple Support — How to use FaceTime</a></li>
+      <li><a href="https://support.zoom.us/hc/en-us/articles/201362193" target="_blank" rel="noopener">Zoom Support — How to join a meeting</a></li>
+      <li><a href="https://support.google.com/meet/" target="_blank" rel="noopener">Google Meet Help Center</a></li>
+      <li><a href="https://www.aarp.org/home-family/personal-technology/info-2020/video-chat-apps-for-seniors.html" target="_blank" rel="noopener">AARP — Best Video Chat Apps for Older Adults</a></li>
+      <li><a href="https://www.missoulaagingservices.org" target="_blank" rel="noopener">Missoula Aging Services — Local support for older adults in Missoula</a></li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Good Neighbor Tech">
+    <div class="footer-logo">Good Neighbor Tech<span>.</span></div>
+  </div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+</script>
+
+</body>
+</html>

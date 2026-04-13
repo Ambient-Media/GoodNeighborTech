@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B87GG61EHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B87GG61EHW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Good Neighbor Tech</title>
+<meta name="description" content="Simple tech tips and guides written in plain language for Missoula seniors. No jargon, no judgment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables (from homepage) ===== */
+:root {
+  --primary: #2B6CB0;
+  --primary-dark: #1E3A5F;
+  --primary-light: #EBF2FA;
+  --accent: #3E9B4F;
+  --accent-dark: #348542;
+  --cta: #E85D3A;
+  --cta-dark: #D04E2E;
+  --warm-bg: #F9F7F4;
+  --warm-bg-alt: #F1EDE6;
+  --white: #FFFFFF;
+  --text-primary: #2D3748;
+  --text-secondary: #5A6577;
+  --text-light: #8B95A5;
+  --border: #D8DDE5;
+  --shadow: rgba(45, 55, 72, 0.08);
+  --font-display: 'Nunito', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-bg);
+  line-height: 1.8;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation (matches homepage) ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.nav-brand-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--primary); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-nav-cta {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: var(--text-primary);
+  color: var(--white);
+  transition: all 0.35s ease;
+}
+
+.btn-nav-cta:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Nav Dropdowns */
+.has-dropdown { position: relative; }
+
+.dd-arrow {
+  font-size: 0.6em;
+  margin-left: 0.15rem;
+  opacity: 0.7;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+}
+
+.dropdown li a::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  padding: 7rem 2rem 3.5rem;
+  text-align: center;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(43, 108, 176, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.page-desc {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Blog Grid ===== */
+.blog-section {
+  padding: 4rem 2rem 7rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.blog-card-image {
+  height: 200px;
+  background: var(--warm-bg-alt);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card-image .placeholder-icon {
+  font-size: 2.5rem;
+  opacity: 0.3;
+}
+
+.blog-card-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border-radius: 50px;
+  font-family: var(--font-display);
+}
+
+.blog-card-body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.blog-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-excerpt {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  transition: gap 0.3s ease;
+}
+
+.blog-card-link:hover {
+  gap: 0.7rem;
+}
+
+/* ===== Featured Post ===== */
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  transition: all 0.35s ease;
+}
+
+.featured-post:hover {
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.featured-post .blog-card-image {
+  height: 100%;
+  min-height: 320px;
+}
+
+.featured-post .blog-card-body {
+  padding: 2.5rem;
+  justify-content: center;
+}
+
+.featured-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+}
+
+.featured-post .blog-card-title {
+  font-size: 1.6rem;
+}
+
+/* ===== Footer (matches homepage) ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo span { color: var(--accent); }
+
+/* ===== Fade animation ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .featured-post {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-post .blog-card-image {
+    min-height: 220px;
+  }
+
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .btn-nav-cta { display: none; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .nav-links.open a { color: var(--text-secondary); }
+  .nav-links.open a::after { background: var(--primary); }
+  .nav-links.open a:hover { color: var(--text-primary); }
+
+  .nav-links.open .dropdown { display: none; }
+  .nav-links.open .dd-arrow { display: none; }
+
+
+  .nav-mobile-toggle { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .page-header { padding: 6rem 1.25rem 2.5rem; }
+  .nav-brand-logo { height: 36px; }
+  .nav-brand-text { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="Good Neighbor Tech logo" class="nav-brand-logo">
+    <span class="nav-brand-text">Good Neighbor Tech</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services">Device Setup &amp; Help</a></li>
+          <li><a href="index.html#services">Security &amp; Scam Protection</a></li>
+          <li><a href="index.html#services">Stay Connected</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#about">About <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="index.html#testimonials">Kind Words</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="resources.html">Resources <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="resources.html">Guides &amp; Tips</a></li>
+          <li><a href="resources.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="tel:4062244101" class="nav-phone">&#x1F4DE; (406) 224-4101</a>
+    <a href="index.html#hero" class="btn-nav-cta">Book Now</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Page Header ===== -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="page-label">Blog</div>
+    <h1 class="page-title">Tech tips in plain English</h1>
+    <p class="page-desc">Simple guides, honest advice, and the occasional rant about why things don't need to be this complicated.</p>
+  </div>
+</header>
+
+<!-- ===== Blog Content ===== -->
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Featured Post (newest) -->
+    <article class="featured-post fade-up">
+      <div class="blog-card-image">
+        <img src="images/an-elderly-man-in-his-80s-sits-at-a-wood_mJtMUFWGQ2ypdmwu6W-HWA_q4aNmnJ-RC60Zu1v59F0uA_cover_hd.png" alt="Elderly man smiling at laptop" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="blog-card-body">
+        <div class="featured-label">Featured</div>
+        <div class="blog-card-date">March 2026</div>
+        <h2 class="blog-card-title">I Taught My 92-Year-Old Grandfather to Use AI. Here's What Happened.</h2>
+        <p class="blog-card-excerpt">A Missoula grandson gifted his 92-year-old grandfather a Perplexity AI subscription for the holidays. Two months later, Courtney called it the best gift he'd ever received.</p>
+        <a href="ai-grandfather-story-missoula.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- Filter Buttons -->
+    <div class="blog-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">AI &amp; Technology</button>
+      <button class="filter-btn">Staying Connected</button>
+      <button class="filter-btn">Security</button>
+      <button class="filter-btn">Getting Started</button>
+    </div>
+
+    <!-- Blog Grid — newest first -->
+    <div class="blog-grid">
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <img src="images/a-silver-haired-woman-in-a-cream-cardiga_M--bRsajQTmqBNv20bbHWA_Gwer5XqsTOy6B9BPG0DGjw_cover_hd.png" alt="Silver-haired woman sharing tablet with family member" style="width:100%;height:100%;object-fit:cover;">
+          <div class="blog-card-category">Staying Connected</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 2026</div>
+          <h3 class="blog-card-title">5 Ways to Share Photos With Your Family Without Printing Them</h3>
+          <p class="blog-card-excerpt">Google Photos, iCloud, digital frames, and more — ranked from simplest to slightly more involved so you can pick the one that fits.</p>
+          <a href="share-photos-family-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <img src="images/warm-candid-photograph-of-a-happy-senior_-K2rCdDLS9eY6PnLyh2RNg_jlBRflNwQEarOyRjJjjSHQ_cover_hd.png" alt="Happy senior waving at tablet during video call" style="width:100%;height:100%;object-fit:cover;">
+          <div class="blog-card-category">Staying Connected</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 2026</div>
+          <h3 class="blog-card-title">How to Video Call Your Grandkids: A Simple Guide for Missoula Seniors</h3>
+          <p class="blog-card-excerpt">FaceTime, Zoom, or Google Meet — we'll tell you which one to use and exactly what to tap. No jargon, just steps.</p>
+          <a href="video-call-grandkids-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <img src="images/photograph-of-a-concerned-senior-woman-l_5ZRkmH1nT1Ol5B4BF2wBBw_BsrtfW2HTquaVtYad6eOCA_cover_hd.png" alt="Concerned senior woman looking at smartphone" style="width:100%;height:100%;object-fit:cover;">
+          <div class="blog-card-category">Security</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">February 5, 2026</div>
+          <h3 class="blog-card-title">Scam Prevention for Seniors: A Plain-English Guide to Staying Safe</h3>
+          <p class="blog-card-excerpt">Phone fraud and online scams targeting older adults have increased dramatically. Here's how to make yourself a tough target.</p>
+          <a href="scam-prevention-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-image">
+          <img src="images/warm-photograph-of-a-senior-man-s-hands-_sGj7TBEURzmO1CL2YwTIBQ_rVLue9qORn63rSXn1CUOpQ_cover_hd.png" alt="Senior man's hands writing notes beside a laptop" style="width:100%;height:100%;object-fit:cover;">
+          <div class="blog-card-category">Security</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">January 21, 2026</div>
+          <h3 class="blog-card-title">Passwords Don't Have to Be a Nightmare</h3>
+          <p class="blog-card-excerpt">One simple system to manage all your passwords without sticky notes, spreadsheets, or memorizing 47 different things.</p>
+          <a href="password-management-missoula-seniors.html" class="blog-card-link">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Good Neighbor Tech">
+    <div class="footer-logo">Good Neighbor Tech<span>.</span></div>
+  </div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Fade-in observer
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const siblings = entry.target.parentElement.querySelectorAll('.fade-up');
+      const idx = Array.from(siblings).indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('in-view'), idx * 100);
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+// Filter buttons (visual toggle only for now)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
