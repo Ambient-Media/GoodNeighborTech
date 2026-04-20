@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What to Expect From an In-Home Tech Visit — Good Neighbor Tech</title>
+<meta name="description" content="A plain-English walkthrough of what happens before, during, and after a Good Neighbor Tech visit — so you know exactly what you're signing up for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --primary: #2B6CB0;
+  --primary-dark: #1E3A5F;
+  --primary-light: #EBF2FA;
+  --accent: #3E9B4F;
+  --accent-dark: #348542;
+  --cta: #E85D3A;
+  --cta-dark: #D04E2E;
+  --warm-bg: #F9F7F4;
+  --warm-bg-alt: #F1EDE6;
+  --white: #FFFFFF;
+  --text-primary: #2D3748;
+  --text-secondary: #5A6577;
+  --text-light: #8B95A5;
+  --border: #D8DDE5;
+  --shadow: rgba(45, 55, 72, 0.08);
+  --font-display: 'Nunito', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-bg);
+  line-height: 1.85;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.nav-brand-logo { height: 48px; width: auto; }
+
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--primary); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-phone {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-nav-cta {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: var(--text-primary);
+  color: var(--white);
+  transition: all 0.35s ease;
+}
+
+.btn-nav-cta:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.has-dropdown { position: relative; }
+
+.dd-arrow { font-size: 0.6em; margin-left: 0.15rem; opacity: 0.7; }
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+}
+
+.dropdown li a::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.nav-mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ===== Article Header ===== */
+.article-header {
+  padding: 7rem 2rem 4rem;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.article-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(43, 108, 176, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.article-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-back {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.article-back:hover { color: var(--white); }
+
+.article-category {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.article-meta .dot { opacity: 0.4; }
+
+/* ===== Article Body ===== */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.article-body p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.article-body ul li {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 0.4rem 0 0.4rem 1.75rem;
+  position: relative;
+}
+
+.article-body ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Callout (green border) */
+.callout {
+  border-left: 4px solid var(--accent);
+  background: var(--warm-bg-alt);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Soft CTA (blue bg) */
+.soft-cta {
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  margin: 2.5rem 0;
+}
+
+.soft-cta p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ===== Article CTA Box ===== */
+.article-cta {
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.article-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(62, 155, 79, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.article-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.article-cta h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(62, 155, 79, 0.35);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img { height: 32px; width: auto; }
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo span { color: var(--accent); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .btn-nav-cta { display: none; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .nav-links.open a { color: var(--text-secondary); }
+  .nav-links.open a::after { background: var(--primary); }
+  .nav-links.open a:hover { color: var(--text-primary); }
+  .nav-links.open .dropdown { display: none; }
+  .nav-links.open .dd-arrow { display: none; }
+  .nav-mobile-toggle { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .article-header { padding: 6rem 1.25rem 3rem; }
+  .article-body { padding: 2.5rem 1.25rem 4rem; }
+  .nav-brand-logo { height: 36px; }
+  .nav-brand-text { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="Good Neighbor Tech logo" class="nav-brand-logo">
+    <span class="nav-brand-text">Good Neighbor Tech</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html#services">Services <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#services">Device Setup &amp; Help</a></li>
+          <li><a href="index.html#services">Security &amp; Scam Protection</a></li>
+          <li><a href="index.html#services">Stay Connected</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="index.html#about">About <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="index.html#testimonials">Kind Words</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="resources.html" class="active">Resources <span class="dd-arrow">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="resources.html">Guides &amp; Tips</a></li>
+          <li><a href="resources.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="tel:4062244101" class="nav-phone">&#x1F4DE; (406) 224-4101</a>
+    <a href="index.html#hero" class="btn-nav-cta">Book Now</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== Article Header ===== -->
+<header class="article-header">
+  <div class="article-header-content">
+    <a href="resources.html" class="article-back">← Back to Resources</a>
+    <div class="article-category">You're Not Behind</div>
+    <h1 class="article-title">What to Expect From an In-Home Tech Visit</h1>
+    <div class="article-meta">
+      <span>Good Neighbor Tech</span>
+      <span class="dot">·</span>
+      <span>April 2026</span>
+      <span class="dot">·</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Article Body ===== -->
+<main class="article-body">
+
+  <p>Most people leave a tech visit feeling one of two ways: talked down to, or just glad it's over. After a visit with Good Neighbor Tech, you leave knowing what happened, why it happened, and that you can handle it if it happens again. That's the whole point.</p>
+
+  <p>Here's exactly what it looks like, start to finish.</p>
+
+  <h2>Before we arrive</h2>
+
+  <p>You don't need to prepare anything. You don't need to write down passwords, clean up your desktop, or feel embarrassed about how many browser tabs you have open. Just have your device nearby and a rough idea of what's been bothering you. That's it.</p>
+
+  <p>We'll confirm your appointment by phone or email, and we'll show up on time.</p>
+
+  <h2>When we arrive</h2>
+
+  <p>We introduce ourselves, take off our shoes, and sit down with you at your own pace. There's no timer running and no queue of other customers waiting. You have our full attention.</p>
+
+  <p>We'll ask you to describe what's been happening in your own words. You don't need the technical vocabulary. "It's been slow lately" or "something looks different after the update" is a perfectly good starting point.</p>
+
+  <h2>During the visit</h2>
+
+  <p>We work through the problem with you in the room, not while you wait in the kitchen. If we're doing something you might want to know how to do yourself next time, we'll explain it as we go. If you want to just sit back and let us handle it, that's fine too. You set the pace.</p>
+
+  <div class="callout">
+    <p>We don't use jargon without explaining it. If we catch ourselves doing it, call us out.</p>
+  </div>
+
+  <h2>Before we leave</h2>
+
+  <p>We won't pack up until you feel good about where things stand. We'll walk you through what we did, what we changed, and what to watch for. If something comes up in the next few days that seems related, just reach out.</p>
+
+  <p>You'll know exactly what you paid for before we arrived. No surprise charges.</p>
+
+  <h2>What we can help with</h2>
+
+  <p>Most visits come down to one of these situations:</p>
+
+  <ul>
+    <li>Your new phone, tablet, or laptop needs to actually work the way you want it to</li>
+    <li>Something changed after an update and nothing looks right anymore</li>
+    <li>Your computer has gotten slow enough that you've started avoiding it</li>
+    <li>You want to video call your grandkids without it being a whole production</li>
+    <li>You've heard about a tool or app and want someone to show you how it actually works</li>
+    <li>You're not sure if your accounts and devices are secure, and you'd like to know for certain</li>
+  </ul>
+
+  <div class="soft-cta">
+    <p>If what you need is outside our scope, we'll tell you honestly and point you in the right direction.</p>
+  </div>
+
+</main>
+
+<!-- ===== CTA Box ===== -->
+<section class="article-cta">
+  <div class="article-cta-content">
+    <h2>Ready to book a visit?</h2>
+    <p>You don't have to be a tech person to feel confident about your own devices. That's what we're here for.</p>
+    <a href="index.html#hero" class="btn-cta">Book a Visit</a>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Good Neighbor Tech">
+    <div class="footer-logo">Good Neighbor Tech<span>.</span></div>
+  </div>
+  <p>&copy; 2026 Good Neighbor Tech. Built with care in Montana.</p>
+</footer>
+
+<script>
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+</script>
+
+</body>
+</html>
