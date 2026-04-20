@@ -83,10 +83,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.75rem;
 }
 
-.nav-brand-logo {
-  height: 48px;
-  width: auto;
-}
+.nav-brand-logo { height: 48px; width: auto; }
 
 .nav-brand-text {
   font-family: var(--font-display);
@@ -131,7 +128,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .nav-links a:hover { color: var(--text-primary); }
 .nav-links a:hover::after { width: 100%; }
-
 .nav-links a.active { color: var(--primary); }
 .nav-links a.active::after { width: 100%; }
 
@@ -177,16 +173,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all 0.3s ease;
 }
 
-/* ===== Nav Dropdowns ===== */
-.has-dropdown {
-  position: relative;
-}
-
-.dd-arrow {
-  font-size: 0.6em;
-  margin-left: 0.15rem;
-  opacity: 0.7;
-}
+.has-dropdown { position: relative; }
+.dd-arrow { font-size: 0.6em; margin-left: 0.15rem; opacity: 0.7; }
 
 .dropdown {
   position: absolute;
@@ -227,9 +215,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--primary) !important;
 }
 
-.dropdown li a::after {
-  display: none !important;
-}
+.dropdown li a::after { display: none !important; }
 
 /* ===== Page Header ===== */
 .page-header {
@@ -288,10 +274,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-right: auto;
 }
 
-/* ===== Coming Soon ===== */
-.coming-soon {
-  padding: 6rem 2rem 10rem;
-  text-align: center;
+/* ===== Resources Section ===== */
+.resources-section {
+  padding: 5rem 2rem 8rem;
 }
 
 .container {
@@ -299,130 +284,132 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin: 0 auto;
 }
 
-.coming-soon-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: var(--primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  margin: 0 auto 2rem;
-  position: relative;
+/* Featured card (most recent, full width) */
+.resource-featured {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  transition: all 0.35s ease;
+  color: inherit;
 }
 
-.coming-soon-icon::after {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1.5px dashed var(--border);
-  animation: spinSlow 30s linear infinite;
+.resource-featured:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--shadow);
 }
 
-@keyframes spinSlow {
-  to { transform: rotate(360deg); }
-}
-
-.coming-soon h2 {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.coming-soon p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  max-width: 460px;
-  margin: 0 auto 2.5rem;
-}
-
-.coming-soon-features {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
-.coming-soon-feature {
-  text-align: center;
-  max-width: 200px;
-}
-
-.coming-soon-feature .icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+.resource-featured-visual {
   background: var(--warm-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  margin: 0 auto 0.75rem;
+  font-size: 3.5rem;
+  min-height: 220px;
 }
 
-.coming-soon-feature h4 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.coming-soon-feature p {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  margin: 0;
-}
-
-/* Email form */
-.email-form {
+.resource-featured-body {
+  padding: 2.5rem;
   display: flex;
-  gap: 0.75rem;
-  max-width: 420px;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.email-form input {
-  flex: 1;
-  padding: 0.85rem 1.25rem;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  background: white;
-  transition: border-color 0.3s ease;
+/* Standard card grid */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.email-form input::placeholder { color: var(--text-light); }
-.email-form input:focus { outline: none; border-color: var(--primary); }
-
-.btn {
-  display: inline-block;
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 50px;
+.resource-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
   transition: all 0.35s ease;
-  white-space: nowrap;
+  color: inherit;
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  border: none;
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--shadow);
 }
 
-.btn-primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(62, 155, 79, 0.3);
+.resource-card-visual {
+  background: var(--warm-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  height: 140px;
+}
+
+.resource-card-body {
+  padding: 1.75rem;
+}
+
+/* Shared card content styles */
+.resource-category {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0;
+  border-radius: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.resource-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+}
+
+.resource-featured-body .resource-title {
+  font-size: 1.65rem;
+}
+
+.resource-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  transition: gap 0.3s ease;
+}
+
+.resource-card:hover .resource-link,
+.resource-featured:hover .resource-link {
+  gap: 0.7rem;
+}
+
+.resource-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
 }
 
 /* ===== Footer ===== */
@@ -442,10 +429,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 0.5rem;
 }
 
-.footer-brand img {
-  height: 32px;
-  width: auto;
-}
+.footer-brand img { height: 32px; width: auto; }
 
 .footer-logo {
   font-family: var(--font-display);
@@ -459,6 +443,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .nav-links, .nav-phone, .btn-nav-cta { display: none; }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -475,18 +460,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .nav-links.open .dropdown { display: none; }
   .nav-links.open .dd-arrow { display: none; }
-
-
   .nav-mobile-toggle { display: flex; }
 
-  .email-form {
-    flex-direction: column;
+  .resource-featured {
+    grid-template-columns: 1fr;
   }
 
-  .coming-soon-features {
-    flex-direction: column;
-    align-items: center;
+  .resource-featured-visual { min-height: 140px; }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+
+@media (max-width: 600px) {
+  .page-header { padding: 6rem 1.25rem 2.5rem; }
+  .nav-brand-logo { height: 36px; }
+  .nav-brand-text { font-size: 1rem; }
 }
 </style>
 </head>
@@ -543,40 +536,38 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   </div>
 </header>
 
-<!-- ===== Coming Soon ===== -->
-<section class="coming-soon">
+<!-- ===== Resources Section ===== -->
+<section class="resources-section">
   <div class="container">
-    <div class="coming-soon-icon">🛠️</div>
-    <h2>We're building something good.</h2>
-    <p>Our resource library is in the works. Sign up below and we'll let you know the moment it's ready.</p>
 
-    <form class="email-form" onsubmit="handleSubmit(event)">
-      <input type="email" placeholder="Your email address" required>
-      <button type="submit" class="btn btn-primary">Notify Me</button>
-    </form>
+    <!-- Featured (most recent) -->
+    <a href="replace-or-fix-your-device.html" class="resource-featured">
+      <div class="resource-featured-visual">🔧</div>
+      <div class="resource-featured-body">
+        <div class="resource-date">April 2026</div>
+        <h2 class="resource-title">Is It Time to Replace Your Device or Just Fix It?</h2>
+        <p class="resource-desc">A plain-English guide to help you decide whether your slow or glitchy device needs a repair or a replacement — before you spend any money.</p>
+        <span class="resource-link">Read guide <span>→</span></span>
+        <div class="resource-category">The New Toolbox</div>
+      </div>
+    </a>
 
-    <div class="coming-soon-features">
-      <div class="coming-soon-feature">
-        <div class="icon">📋</div>
-        <h4>Setup Checklists</h4>
-        <p>Step-by-step guides for new devices</p>
-      </div>
-      <div class="coming-soon-feature">
-        <div class="icon">🛡️</div>
-        <h4>Security Guides</h4>
-        <p>Protect yourself from scams and threats</p>
-      </div>
-      <div class="coming-soon-feature">
-        <div class="icon">📖</div>
-        <h4>How-To Library</h4>
-        <p>Common tasks explained simply</p>
-      </div>
-      <div class="coming-soon-feature">
-        <div class="icon">🔗</div>
-        <h4>Recommended Tools</h4>
-        <p>Apps and services we actually trust</p>
-      </div>
+    <!-- Resource Grid -->
+    <div class="resource-grid">
+
+      <a href="what-to-expect-inhome-tech-visit.html" class="resource-card">
+        <div class="resource-card-visual">🏠</div>
+        <div class="resource-card-body">
+          <div class="resource-date">April 2026</div>
+          <h3 class="resource-title">What to Expect From an In-Home Tech Visit</h3>
+          <p class="resource-desc">A walkthrough of what happens before, during, and after a visit so you know exactly what you're signing up for.</p>
+          <span class="resource-link">Read guide <span>→</span></span>
+          <div class="resource-category">You're Not Behind</div>
+        </div>
+      </a>
+
     </div>
+
   </div>
 </section>
 
@@ -597,20 +588,6 @@ mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
-
-// Email form
-function handleSubmit(e) {
-  e.preventDefault();
-  const input = e.target.querySelector('input');
-  const btn = e.target.querySelector('button');
-  btn.textContent = "You're on the list!";
-  btn.style.background = '#348542';
-  input.value = '';
-  setTimeout(() => {
-    btn.textContent = 'Notify Me';
-    btn.style.background = '';
-  }, 3000);
-}
 </script>
 
 </body>
